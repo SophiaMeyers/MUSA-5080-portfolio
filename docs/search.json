@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "Welcome to my portfolio for MUSA 5080: Public Policy Analytics at the University of Pennsylvania.\nThis site documents my work in the Master of Urban Spatial Analytics program — weekly notes, course assignments, and a final project applying data analysis to urban policy questions.\n\n\n\nI’m a student in the MUSA program at Penn. My background is in [YOUR BACKGROUND], and I’m interested in [YOUR INTERESTS].\n\n\n\n\nWeekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me\n\n\n\n\n\n\nEmail: someyers@upenn.edu\nGitHub: @SophiaMeyers"
+    "text": "Welcome to my portfolio for MUSA 5080: Public Policy Analytics at the University of Pennsylvania.\nThis site documents my work in the Master of Urban Spatial Analytics program — weekly notes, course assignments, and a final project applying data analysis to urban policy questions.\n\n\n\nI’m a student in the MUSA program at Penn. My background is in Geography at the University of California, Berkeley, and I’m interested in Environmental Modeling.\n\n\n\n\nWeekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me\n\n\n\n\n\n\nEmail: someyers@upenn.edu\nGitHub: @SophiaMeyers"
   },
   {
     "objectID": "index.html#about-me",
     "href": "index.html#about-me",
     "title": "Home",
     "section": "",
-    "text": "I’m a student in the MUSA program at Penn. My background is in [YOUR BACKGROUND], and I’m interested in [YOUR INTERESTS]."
+    "text": "I’m a student in the MUSA program at Penn. My background is in Geography at the University of California, Berkeley, and I’m interested in Environmental Modeling."
   },
   {
     "objectID": "index.html#what-youll-find-here",
@@ -32,14 +32,14 @@
     "href": "weekly-notes/week-01.html",
     "title": "Week 1: Getting Set Up",
     "section": "",
-    "text": "Set up the portfolio workflow: made a repository from a template, cloned it with GitHub Desktop, edited files in RStudio, rendered with Quarto, and published to GitHub Pages."
+    "text": "I learned more about how Python and github workflows can be used for website creation. I also learned that unlike most GIS technologies it renders all of your data on your local computer before pushing the product to the internet."
   },
   {
     "objectID": "weekly-notes/week-01.html#what-we-did",
     "href": "weekly-notes/week-01.html#what-we-did",
     "title": "Week 1: Getting Set Up",
     "section": "",
-    "text": "Set up the portfolio workflow: made a repository from a template, cloned it with GitHub Desktop, edited files in RStudio, rendered with Quarto, and published to GitHub Pages."
+    "text": "I learned more about how Python and github workflows can be used for website creation. I also learned that unlike most GIS technologies it renders all of your data on your local computer before pushing the product to the internet."
   },
   {
     "objectID": "weekly-notes/week-01.html#key-concepts",
@@ -53,14 +53,14 @@
     "href": "weekly-notes/week-01.html#proving-r-works",
     "title": "Week 1: Getting Set Up",
     "section": "Proving R Works",
-    "text": "Proving R Works\nThe chunk below runs when this page renders. If you can see a result underneath it on your published site, R and Quarto are talking to each other correctly.\n\nsessionInfo()$R.version$version.string\n\n[1] \"R version 4.6.0 (2026-04-24)\""
+    "text": "Proving R Works\nThe chunk below runs when this page renders. If you can see a result underneath it on your published site, R and Quarto are talking to each other correctly.\n\nsessionInfo()$R.version$version.string\n\n[1] \"R version 4.6.1 (2026-06-24)\""
   },
   {
     "objectID": "weekly-notes/week-01.html#reflection",
     "href": "weekly-notes/week-01.html#reflection",
     "title": "Week 1: Getting Set Up",
     "section": "Reflection",
-    "text": "Reflection\n\nWhat I want out of this course:\nOne thing I’m nervous about:"
+    "text": "Reflection\n\nWhat I want out of this course: I want to become more confident working with programming so that I can analyze large data sets and apply these skills to urban problems.\nOne thing I’m nervous about: I’m nervous about keeping up since I’m still developing my coding skills and am starting from a very novice coding level."
   },
   {
     "objectID": "weekly-notes/week-01.html#questions-i-still-have",
@@ -72,30 +72,30 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About Me",
     "section": "",
-    "text": "Write a few paragraphs about yourself here: where you came from before MUSA, what drew you to urban spatial analytics, and what you’re hoping to do with it."
+    "text": "I studied Geography at UC Berkeley with a minor in Geographic Information Science and Technology, where I became interest in understanding how environmental and human systems interact. Through coursework and research, I gained experience with GIS, remote sensing, and spatial data. I was drawn to urban spatial analytics because I wanted to apply these geospatial skills to understand cities and issues in environmental inequality and access to resources. Through MUSA, I hope to strengthen my skills in data science, programming, and quantitative analysis and ultimately work at the intersection of GIS, data analysis, and urban or environmental planning."
   },
   {
     "objectID": "about.html#background",
     "href": "about.html#background",
-    "title": "About",
+    "title": "About Me",
     "section": "",
-    "text": "Write a few paragraphs about yourself here: where you came from before MUSA, what drew you to urban spatial analytics, and what you’re hoping to do with it."
+    "text": "I studied Geography at UC Berkeley with a minor in Geographic Information Science and Technology, where I became interest in understanding how environmental and human systems interact. Through coursework and research, I gained experience with GIS, remote sensing, and spatial data. I was drawn to urban spatial analytics because I wanted to apply these geospatial skills to understand cities and issues in environmental inequality and access to resources. Through MUSA, I hope to strengthen my skills in data science, programming, and quantitative analysis and ultimately work at the intersection of GIS, data analysis, and urban or environmental planning."
   },
   {
     "objectID": "about.html#skills",
     "href": "about.html#skills",
-    "title": "About",
+    "title": "About Me",
     "section": "Skills",
-    "text": "Skills\n\n\nLanguages & Tools: R, Quarto, Git\nSpatial: (add as you learn)\nData: US Census / ACS via tidycensus"
+    "text": "Skills\n\n\nLanguages & Tools: R, Quarto, Git\nSpatial: QGIS, ARCGIS, Google Earth Engine\nData: US Census / ACS via tidycensus"
   },
   {
     "objectID": "about.html#contact",
     "href": "about.html#contact",
-    "title": "About",
+    "title": "About Me",
     "section": "Contact",
-    "text": "Contact\n\n\nEmail: your-email@upenn.edu\nGitHub: @your-username"
+    "text": "Contact\n\n\nEmail: Someyers@upenn.edu\nGitHub: @SophiaMeyers"
   },
   {
     "objectID": "assignments/index.html",
@@ -117,5 +117,12 @@
     "title": "",
     "section": "",
     "text": "Code\n\n\n\n\nData files for MUSA 5080\nDownload assignment data from Canvas and save it here. Do not rename the files! Have a nice day :)"
+  },
+  {
+    "objectID": "weekly-notes/week-01.html#im-curious-about-how-we-can-apply-the-technical-skills-from-this-course-to-real-world-urban-decision-making.",
+    "href": "weekly-notes/week-01.html#im-curious-about-how-we-can-apply-the-technical-skills-from-this-course-to-real-world-urban-decision-making.",
+    "title": "Week 1: Getting Set Up",
+    "section": "-I’m curious about how we can apply the technical skills from this course to real-world urban decision-making.",
+    "text": "-I’m curious about how we can apply the technical skills from this course to real-world urban decision-making."
   }
 ]
