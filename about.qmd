@@ -6,20 +6,19 @@ title: "About Me"
 
 <!-- CHANGE THIS -->
 
-Write a few paragraphs about yourself here: where you came from before MUSA,
-what drew you to urban spatial analytics, and what you're hoping to do with it.
+I studied Geography at UC Berkeley with a minor in Geographic Information Science and Technology, where I became interest in understanding how environmental and human systems interact. Through coursework and research, I gained experience with GIS, remote sensing, and spatial data. I was drawn to urban spatial analytics because I wanted to apply these geospatial skills to understand cities and issues in environmental inequality and access to resources. Through MUSA, I hope to strengthen my skills in data science, programming, and quantitative analysis and ultimately work at the intersection of GIS, data analysis, and urban or environmental planning.
 
 ## Skills
 
 <!-- CHANGE THIS: update this through the semester as it becomes true -->
 
 - **Languages & Tools:** R, Quarto, Git
-- **Spatial:** (add as you learn)
+- **Spatial:** QGIS, ARCGIS, Google Earth Engine
 - **Data:** US Census / ACS via `tidycensus`
 
 ## Contact
 
 <!-- CHANGE THIS -->
 
-- Email: your-email@upenn.edu
-- GitHub: [@your-username](https://github.com/your-username)
+- Email: Someyers@upenn.edu
+- GitHub: [@SophiaMeyers](https://github.com/SophiaMeyers)
