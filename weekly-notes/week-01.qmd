@@ -8,9 +8,7 @@ date: 2026-08-28
 
 <!-- CHANGE THIS: replace with your own notes -->
 
-Set up the portfolio workflow: made a repository from a template, cloned it with
-GitHub Desktop, edited files in RStudio, rendered with Quarto, and published to
-GitHub Pages.
+I learned more about how Python and github workflows can be used for website creation. I also learned that unlike most GIS technologies it renders all of your data on your local computer before pushing the product to the internet.
 
 ## Key Concepts
 
@@ -35,11 +33,11 @@ sessionInfo()$R.version$version.string
 
 <!-- CHANGE THIS: 3-4 sentences -->
 
-What I want out of this course:
+What I want out of this course: I want to become more confident working with programming so that I can analyze large data sets and apply these skills to urban problems.
 
-One thing I'm nervous about:
+One thing I'm nervous about: I’m nervous about keeping up since I’m still developing my coding skills and am starting from a very novice coding level.
 
 ## Questions I Still Have
 
--
+-I’m curious about how we can apply the technical skills from this course to real-world urban decision-making.
 -
