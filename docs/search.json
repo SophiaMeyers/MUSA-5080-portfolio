@@ -49,46 +49,11 @@
     "text": "-I’m curious about how we can apply the technical skills from this course to real-world urban decision-making."
   },
   {
-    "objectID": "data/readme.html",
-    "href": "data/readme.html",
-    "title": "",
+    "objectID": "weekly-notes/index.html",
+    "href": "weekly-notes/index.html",
+    "title": "Weekly Notes",
     "section": "",
-    "text": "Code\n\n\n\n\nData files for MUSA 5080\nDownload assignment data from Canvas and save it here. Do not rename the files! Have a nice day :)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "Welcome to my portfolio for MUSA 5080: Public Policy Analytics at the University of Pennsylvania.\nThis site documents my work in the Master of Urban Spatial Analytics program — weekly notes, course assignments, and a final project applying data analysis to urban policy questions.\n\n\n\nI’m a student in the MUSA program at Penn. My background is in Geography at the University of California, Berkeley, and I’m interested in Environmental Modeling.\n\n\n\n\nWeekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me\n\n\n\n\n\n\nEmail: someyers@upenn.edu\nGitHub: @SophiaMeyers"
-  },
-  {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "Home",
-    "section": "",
-    "text": "I’m a student in the MUSA program at Penn. My background is in Geography at the University of California, Berkeley, and I’m interested in Environmental Modeling."
-  },
-  {
-    "objectID": "index.html#what-youll-find-here",
-    "href": "index.html#what-youll-find-here",
-    "title": "Home",
-    "section": "",
-    "text": "Weekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me"
-  },
-  {
-    "objectID": "index.html#get-in-touch",
-    "href": "index.html#get-in-touch",
-    "title": "Home",
-    "section": "",
-    "text": "Email: someyers@upenn.edu\nGitHub: @SophiaMeyers"
-  },
-  {
-    "objectID": "assignments/index.html",
-    "href": "assignments/index.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Completed assignments for MUSA 5080. New assignments appear here automatically once you add the .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Notes from each week of MUSA 5080. New entries appear here automatically — add a .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\n\nWeek 2: Dplyr and Census\n\n\nTable functions and acs data\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\nWeek 1: Getting Set Up\n\n\nFirst impressions, and getting the workflow running.\n\n\n\n\n\nAug 28, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -119,10 +84,73 @@
     "text": "Contact\n\n\nEmail: Someyers@upenn.edu\nGitHub: @SophiaMeyers"
   },
   {
-    "objectID": "weekly-notes/index.html",
-    "href": "weekly-notes/index.html",
-    "title": "Weekly Notes",
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments",
     "section": "",
-    "text": "Notes from each week of MUSA 5080. New entries appear here automatically — add a .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\n\nWeek 1: Getting Set Up\n\n\nFirst impressions, and getting the workflow running.\n\n\n\n\n\nAug 28, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Completed assignments for MUSA 5080. New assignments appear here automatically once you add the .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to my portfolio for MUSA 5080: Public Policy Analytics at the University of Pennsylvania.\nThis site documents my work in the Master of Urban Spatial Analytics program — weekly notes, course assignments, and a final project applying data analysis to urban policy questions.\n\n\n\nI’m a student in the MUSA program at Penn. My background is in Geography at the University of California, Berkeley, and I’m interested in Environmental Modeling.\n\n\n\n\nWeekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me\n\n\n\n\n\n\nEmail: someyers@upenn.edu\nGitHub: @SophiaMeyers"
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Home",
+    "section": "",
+    "text": "I’m a student in the MUSA program at Penn. My background is in Geography at the University of California, Berkeley, and I’m interested in Environmental Modeling."
+  },
+  {
+    "objectID": "index.html#what-youll-find-here",
+    "href": "index.html#what-youll-find-here",
+    "title": "Home",
+    "section": "",
+    "text": "Weekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me"
+  },
+  {
+    "objectID": "index.html#get-in-touch",
+    "href": "index.html#get-in-touch",
+    "title": "Home",
+    "section": "",
+    "text": "Email: someyers@upenn.edu\nGitHub: @SophiaMeyers"
+  },
+  {
+    "objectID": "data/readme.html",
+    "href": "data/readme.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\nData files for MUSA 5080\nDownload assignment data from Canvas and save it here. Do not rename the files! Have a nice day :)"
+  },
+  {
+    "objectID": "weekly-notes/week-02.html",
+    "href": "weekly-notes/week-02.html",
+    "title": "Week 2: Dplyr and Census",
+    "section": "",
+    "text": "First we had a quiz."
+  },
+  {
+    "objectID": "weekly-notes/week-02.html#what-we-did",
+    "href": "weekly-notes/week-02.html#what-we-did",
+    "title": "Week 2: Dplyr and Census",
+    "section": "",
+    "text": "First we had a quiz."
+  },
+  {
+    "objectID": "weekly-notes/week-02.html#reflection",
+    "href": "weekly-notes/week-02.html#reflection",
+    "title": "Week 2: Dplyr and Census",
+    "section": "Reflection",
+    "text": "Reflection"
+  },
+  {
+    "objectID": "weekly-notes/week-02.html#questions-i-still-have",
+    "href": "weekly-notes/week-02.html#questions-i-still-have",
+    "title": "Week 2: Dplyr and Census",
+    "section": "Questions I Still Have",
+    "text": "Questions I Still Have\n?"
   }
 ]

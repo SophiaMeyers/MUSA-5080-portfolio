@@ -1,0 +1,22 @@
+---
+title: "Week 2: Dplyr and Census"
+description: "Table functions and acs data"
+date: 2026-09-04
+---
+
+## What We Did
+
+<!-- CHANGE THIS: replace with your own notes -->
+
+First we had a quiz.
+
+
+## Reflection
+
+<!-- CHANGE THIS: 3-4 sentences -->
+
+
+
+## Questions I Still Have
+
+?
