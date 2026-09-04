@@ -130,27 +130,27 @@
     "href": "weekly-notes/week-02.html",
     "title": "Week 2: Dplyr and Census",
     "section": "",
-    "text": "First we had a quiz."
+    "text": "First we had a quiz.The we learned bout the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus."
   },
   {
     "objectID": "weekly-notes/week-02.html#what-we-did",
     "href": "weekly-notes/week-02.html#what-we-did",
     "title": "Week 2: Dplyr and Census",
     "section": "",
-    "text": "First we had a quiz."
+    "text": "First we had a quiz.The we learned bout the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus."
   },
   {
     "objectID": "weekly-notes/week-02.html#reflection",
     "href": "weekly-notes/week-02.html#reflection",
     "title": "Week 2: Dplyr and Census",
     "section": "Reflection",
-    "text": "Reflection"
+    "text": "Reflection\n\nI am excited about the much easier way to access census data through the tidycensus. I have tried to access data sets through the website for GIS projects and it was very difficult. It also seems as though the function that are used to filrter through the data will become second nature and are not complicated. I think what will take the nost time is figuring out the piping and streamlining the data processing."
   },
   {
     "objectID": "weekly-notes/week-02.html#questions-i-still-have",
     "href": "weekly-notes/week-02.html#questions-i-still-have",
     "title": "Week 2: Dplyr and Census",
     "section": "Questions I Still Have",
-    "text": "Questions I Still Have\n?"
+    "text": "Questions I Still Have\nCan you filter through the data sets by putting in coordinates of a vector feauture and searching for tracts that fall within that area? Like if you wanted to hand draw a neighborhoods boundaries and search within that vector feature."
   }
 ]
