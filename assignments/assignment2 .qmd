@@ -1,0 +1,164 @@
+---
+title: "Assignment 2: Who Do We Know the Least About?"
+subtitle: "Measuring uncertainty in American Community Survey data"
+author: "Sophia Meyers"
+date: today
+format:
+  html:
+    toc: true
+    code-fold: false
+execute:
+  warning: false
+  message: false
+---
+
+## Setup
+
+```{r}
+library(tidyverse)
+library(tidycensus)
+```
+
+
+---
+
+## The question
+
+Every number the American Community Survey publishes is an estimate drawn from a
+sample, not a count. That means every number comes with a margin of error — a
+statement about how wrong it might be.
+
+Most people ignore it. In this assignment, you won't.
+
+
+**In this analysis, I examine median gross rent across counties in Oregon. I want to understand which communities have the most and least reliable rent estimates and whether some counties have greater uncertainty in their Census data than others.**
+
+---
+
+## Choosing what to measure
+
+
+```{r}
+my_state <- "OR"        # two-letter abbreviation, in quotes
+my_variable <- "B25064_001"     # the variable code, in quotes
+```
+
+## Pulling the data
+
+```{r}
+county_data <- get_acs(
+  geography = "county",
+  variables = my_variable,
+  state = my_state,
+  year = 2023,
+  survey = "acs5"
+)
+```
+
+Let's look at what came back.
+
+```{r}
+dim(county_data)
+head(county_data)
+```
+
+
+**I got 36 rows back, which is the total amount of counties in Oregon.**
+
+---
+
+## How big is the margin of error?
+
+A margin of error of 3,000 means something very different for an estimate of 20,000
+than for an estimate of 200,000. To compare across places, we need it as a
+percentage.
+
+```{r}
+county_data <- county_data %>%
+  mutate(moe_pct = moe / estimate * 100)
+```
+
+
+Now sort to see which counties are measured least reliably.
+
+```{r}
+county_data %>%
+  arrange(desc(moe_pct)) %>%
+  select(NAME, estimate, moe, moe_pct) %>%
+  head(10)
+```
+
+
+**Gilliam County, Oregon has the largest margin of error relative to its estimate? It is 15.313653%**
+
+---
+
+## Sorting counties into reliability categories
+
+```{r}
+county_data <- county_data %>%
+  mutate(reliability = case_when(
+    moe_pct < 5  ~ "High confidence",
+    moe_pct < 10 ~ "Moderate",
+    TRUE         ~ "Low confidence"
+  ))
+
+count(county_data, reliability)
+```
+
+
+**20 counties fall into high confidence, 5 fall into low confidence, and 11 fall into moderate.**
+
+---
+
+## Is the margin of error bigger in small places?
+
+To answer this we need population and our variable side by side, in the same row.
+That means a **wide** pull.
+
+```{r}
+county_wide <- get_acs(
+  geography = "county",
+  variables = c(myvar = my_variable,
+                pop   = "B01003_001"),
+  state = my_state,
+  year = 2023,
+  survey = "acs5",
+  output = "wide"
+)
+
+head(county_wide)
+```
+
+
+```{r}
+county_wide <- county_wide %>%
+  mutate(moe_pct = myvarM / myvarE * 100) %>%
+  mutate(reliability = case_when(
+    moe_pct < 5  ~ "High confidence",
+    moe_pct < 15 ~ "Moderate",
+    TRUE         ~ "Low confidence"
+  ))
+```
+
+Now compare the average population of counties in each reliability category.
+
+```{r}
+county_wide %>%
+  group_by(reliability) %>%
+  summarize(
+    n_counties = n(),
+    avg_population = mean(popE)
+  )
+```
+
+
+**High confidence counties have an average population of about 197,743, while moderate confidence counties average about 18,790 people. The one low confidence county has a much smaller population of about 2,002 people. The results show that smaller counties tend to have less reliable estimates and larger margins of error.**
+
+---
+
+## What this means for policy
+
+**The communities we know the least about in this analysis are the smaller counties in Oregon, which have the largest margins of error relative to their median gross rent estimates. Gilliam County has the highest margin of error at 15.31%, followed by Sherman County at 14.07% and Wheeler County at 13.43%. Morrow County and Hood River County also have relatively high margins of error, at 11.98% and 10.72%, respectively. These results suggest that the reliability of ACS estimates is related to the size of the communities being measured. The ACS does not collect information from every household. It uses a sample to estimate characteristics for larger populations. There are fewer households in smaller counties to be included in the sample, meaning that individual responses have a greater effect on the overall estimate. This causes larger margins of error for the reported median gross rent. 
+The high-confidence counties in my analysis have an average population of about 197,743, compared with only 18,790 for moderate-confidence counties and 2,002 for the one low-confidence county. This uncertainty could create problems if a state agency used these estimates to allocate housing-related funding while treating every county's number as equally reliable. Smaller counties could receive too much or too little funding based on an estimate that is relatively uncertain. This could particularly hurt rural communities, such as in Gillian County, where limited resources and smaller populations already make it harder to accurately identify housing needs.**
+
