@@ -1,0 +1,20 @@
+---
+title: "Week 2: Dplyr and Census"
+description: "Table functions and acs data"
+date: 2026-09-04
+---
+
+## What We Did
+
+<!-- CHANGE THIS: replace with your own notes -->
+We learned about calculating reliability of change from the margins of error in census data. We also learned how to create and style plots in R.
+
+
+## Reflection
+
+<!-- CHANGE THIS: 3-4 sentences -->
+I didn't realize that the Census had a constant confidence interval of 90%; that seems to make piping your code to test for reliability much simpler. I am excited about applying statistical functions we are learning/ have experience with to census data, as it is supporting my understanding.
+
+## Questions I Still Have
+
+What is it about the method in which they collect the data that makes the confidence interval a constant/ how is this calculated?

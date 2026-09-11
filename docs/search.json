@@ -49,39 +49,74 @@
     "text": "-I’m curious about how we can apply the technical skills from this course to real-world urban decision-making."
   },
   {
-    "objectID": "weekly-notes/index.html",
-    "href": "weekly-notes/index.html",
-    "title": "Weekly Notes",
+    "objectID": "weekly-notes/week-02.html",
+    "href": "weekly-notes/week-02.html",
+    "title": "Week 2: Dplyr and Census",
     "section": "",
-    "text": "Notes from each week of MUSA 5080. New entries appear here automatically — add a .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\n\nWeek 2: Dplyr and Census\n\n\nTable functions and acs data\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\nWeek 1: Getting Set Up\n\n\nFirst impressions, and getting the workflow running.\n\n\n\n\n\nAug 28, 2026\n\n\n\n\n\nNo matching items"
+    "text": "First we had a quiz.Then we learned about the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "weekly-notes/week-02.html#what-we-did",
+    "href": "weekly-notes/week-02.html#what-we-did",
+    "title": "Week 2: Dplyr and Census",
     "section": "",
-    "text": "I studied Geography at UC Berkeley with a minor in Geographic Information Science and Technology, where I became interest in understanding how environmental and human systems interact. Through coursework and research, I gained experience with GIS, remote sensing, and spatial data. I was drawn to urban spatial analytics because I wanted to apply these geospatial skills to understand cities and issues in environmental inequality and access to resources. Through MUSA, I hope to strengthen my skills in data science, programming, and quantitative analysis and ultimately work at the intersection of GIS, data analysis, and urban or environmental planning."
+    "text": "First we had a quiz.Then we learned about the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus."
   },
   {
-    "objectID": "about.html#background",
-    "href": "about.html#background",
-    "title": "About Me",
+    "objectID": "weekly-notes/week-02.html#reflection",
+    "href": "weekly-notes/week-02.html#reflection",
+    "title": "Week 2: Dplyr and Census",
+    "section": "Reflection",
+    "text": "Reflection\n\nI am excited about the much easier way to access census data through the tidycensus. I have tried to access data sets through the website for GIS projects and it was very difficult. It also seems as though the function that are used to filter through the data will become second nature and are not complicated. I think what will take the nost time is figuring out the piping and streamlining the data processing."
+  },
+  {
+    "objectID": "weekly-notes/week-02.html#questions-i-still-have",
+    "href": "weekly-notes/week-02.html#questions-i-still-have",
+    "title": "Week 2: Dplyr and Census",
+    "section": "Questions I Still Have",
+    "text": "Questions I Still Have\nCan you filter through the data sets by putting in coordinates of a vector feauture and searching for tracts that fall within that area? Like if you wanted to hand draw a neighborhoods boundaries and search within that vector feature."
+  },
+  {
+    "objectID": "data/readme.html",
+    "href": "data/readme.html",
+    "title": "",
     "section": "",
-    "text": "I studied Geography at UC Berkeley with a minor in Geographic Information Science and Technology, where I became interest in understanding how environmental and human systems interact. Through coursework and research, I gained experience with GIS, remote sensing, and spatial data. I was drawn to urban spatial analytics because I wanted to apply these geospatial skills to understand cities and issues in environmental inequality and access to resources. Through MUSA, I hope to strengthen my skills in data science, programming, and quantitative analysis and ultimately work at the intersection of GIS, data analysis, and urban or environmental planning."
+    "text": "Code\n\n\n\n\nData files for MUSA 5080\nDownload assignment data from Canvas and save it here. Do not rename the files! Have a nice day :)"
   },
   {
-    "objectID": "about.html#skills",
-    "href": "about.html#skills",
-    "title": "About Me",
-    "section": "Skills",
-    "text": "Skills\n\n\nLanguages & Tools: R, Quarto, Git\nSpatial: QGIS, ARCGIS, Google Earth Engine\nData: US Census / ACS via tidycensus"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to my portfolio for MUSA 5080: Public Policy Analytics at the University of Pennsylvania.\nThis site documents my work in the Master of Urban Spatial Analytics program — weekly notes, course assignments, and a final project applying data analysis to urban policy questions.\n\n\n\nI’m a student in the MUSA program at Penn. My background is in Geography at the University of California, Berkeley, and I’m interested in Environmental Modeling.\n\n\n\n\nWeekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me\n\n\n\n\n\n\nEmail: someyers@upenn.edu\nGitHub: @SophiaMeyers"
   },
   {
-    "objectID": "about.html#contact",
-    "href": "about.html#contact",
-    "title": "About Me",
-    "section": "Contact",
-    "text": "Contact\n\n\nEmail: Someyers@upenn.edu\nGitHub: @SophiaMeyers"
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Home",
+    "section": "",
+    "text": "I’m a student in the MUSA program at Penn. My background is in Geography at the University of California, Berkeley, and I’m interested in Environmental Modeling."
+  },
+  {
+    "objectID": "index.html#what-youll-find-here",
+    "href": "index.html#what-youll-find-here",
+    "title": "Home",
+    "section": "",
+    "text": "Weekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me"
+  },
+  {
+    "objectID": "index.html#get-in-touch",
+    "href": "index.html#get-in-touch",
+    "title": "Home",
+    "section": "",
+    "text": "Email: someyers@upenn.edu\nGitHub: @SophiaMeyers"
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Completed assignments for MUSA 5080. New assignments appear here automatically once you add the .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\n\nAssignment 2: Who Do We Know the Least About?\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "assignments/assignment2 .html",
@@ -147,73 +182,66 @@
     "text": "What this means for policy\nThe communities we know the least about in this analysis are the smaller counties in Oregon, which have the largest margins of error relative to their median gross rent estimates. Gilliam County has the highest margin of error at 15.31%, followed by Sherman County at 14.07% and Wheeler County at 13.43%. Morrow County and Hood River County also have relatively high margins of error, at 11.98% and 10.72%, respectively. These results suggest that the reliability of ACS estimates is related to the size of the communities being measured. The ACS does not collect information from every household. It uses a sample to estimate characteristics for larger populations. There are fewer households in smaller counties to be included in the sample, meaning that individual responses have a greater effect on the overall estimate. This causes larger margins of error for the reported median gross rent. The high-confidence counties in my analysis have an average population of about 197,743, compared with only 18,790 for moderate-confidence counties and 2,002 for the one low-confidence county. This uncertainty could create problems if a state agency used these estimates to allocate housing-related funding while treating every county’s number as equally reliable. Smaller counties could receive too much or too little funding based on an estimate that is relatively uncertain. This could particularly hurt rural communities, such as in Gillian County, where limited resources and smaller populations already make it harder to accurately identify housing needs."
   },
   {
-    "objectID": "assignments/index.html",
-    "href": "assignments/index.html",
-    "title": "Assignments",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
     "section": "",
-    "text": "Completed assignments for MUSA 5080. New assignments appear here automatically once you add the .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\n\nAssignment 2: Who Do We Know the Least About?\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\n\n\n\nNo matching items"
+    "text": "I studied Geography at UC Berkeley with a minor in Geographic Information Science and Technology, where I became interest in understanding how environmental and human systems interact. Through coursework and research, I gained experience with GIS, remote sensing, and spatial data. I was drawn to urban spatial analytics because I wanted to apply these geospatial skills to understand cities and issues in environmental inequality and access to resources. Through MUSA, I hope to strengthen my skills in data science, programming, and quantitative analysis and ultimately work at the intersection of GIS, data analysis, and urban or environmental planning."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "about.html#background",
+    "href": "about.html#background",
+    "title": "About Me",
     "section": "",
-    "text": "Welcome to my portfolio for MUSA 5080: Public Policy Analytics at the University of Pennsylvania.\nThis site documents my work in the Master of Urban Spatial Analytics program — weekly notes, course assignments, and a final project applying data analysis to urban policy questions.\n\n\n\nI’m a student in the MUSA program at Penn. My background is in Geography at the University of California, Berkeley, and I’m interested in Environmental Modeling.\n\n\n\n\nWeekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me\n\n\n\n\n\n\nEmail: someyers@upenn.edu\nGitHub: @SophiaMeyers"
+    "text": "I studied Geography at UC Berkeley with a minor in Geographic Information Science and Technology, where I became interest in understanding how environmental and human systems interact. Through coursework and research, I gained experience with GIS, remote sensing, and spatial data. I was drawn to urban spatial analytics because I wanted to apply these geospatial skills to understand cities and issues in environmental inequality and access to resources. Through MUSA, I hope to strengthen my skills in data science, programming, and quantitative analysis and ultimately work at the intersection of GIS, data analysis, and urban or environmental planning."
   },
   {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "Home",
-    "section": "",
-    "text": "I’m a student in the MUSA program at Penn. My background is in Geography at the University of California, Berkeley, and I’m interested in Environmental Modeling."
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "About Me",
+    "section": "Skills",
+    "text": "Skills\n\n\nLanguages & Tools: R, Quarto, Git\nSpatial: QGIS, ARCGIS, Google Earth Engine\nData: US Census / ACS via tidycensus"
   },
   {
-    "objectID": "index.html#what-youll-find-here",
-    "href": "index.html#what-youll-find-here",
-    "title": "Home",
-    "section": "",
-    "text": "Weekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me"
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About Me",
+    "section": "Contact",
+    "text": "Contact\n\n\nEmail: Someyers@upenn.edu\nGitHub: @SophiaMeyers"
   },
   {
-    "objectID": "index.html#get-in-touch",
-    "href": "index.html#get-in-touch",
-    "title": "Home",
+    "objectID": "weekly-notes/index.html",
+    "href": "weekly-notes/index.html",
+    "title": "Weekly Notes",
     "section": "",
-    "text": "Email: someyers@upenn.edu\nGitHub: @SophiaMeyers"
+    "text": "Notes from each week of MUSA 5080. New entries appear here automatically — add a .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\n\nWeek 2: Dplyr and Census\n\n\nTable functions and acs data\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\nWeek 2: Dplyr and Census\n\n\nTable functions and acs data\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\nWeek 1: Getting Set Up\n\n\nFirst impressions, and getting the workflow running.\n\n\n\n\n\nAug 28, 2026\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "data/readme.html",
-    "href": "data/readme.html",
-    "title": "",
-    "section": "",
-    "text": "Code\n\n\n\n\nData files for MUSA 5080\nDownload assignment data from Canvas and save it here. Do not rename the files! Have a nice day :)"
-  },
-  {
-    "objectID": "weekly-notes/week-02.html",
-    "href": "weekly-notes/week-02.html",
+    "objectID": "weekly-notes/week-03.html",
+    "href": "weekly-notes/week-03.html",
     "title": "Week 2: Dplyr and Census",
     "section": "",
-    "text": "First we had a quiz.The we learned bout the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus."
+    "text": "We learned about calculating reliability of change from the margins of error in census data. We also learned how to create and style plots in R."
   },
   {
-    "objectID": "weekly-notes/week-02.html#what-we-did",
-    "href": "weekly-notes/week-02.html#what-we-did",
+    "objectID": "weekly-notes/week-03.html#what-we-did",
+    "href": "weekly-notes/week-03.html#what-we-did",
     "title": "Week 2: Dplyr and Census",
     "section": "",
-    "text": "First we had a quiz.The we learned bout the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus."
+    "text": "We learned about calculating reliability of change from the margins of error in census data. We also learned how to create and style plots in R."
   },
   {
-    "objectID": "weekly-notes/week-02.html#reflection",
-    "href": "weekly-notes/week-02.html#reflection",
+    "objectID": "weekly-notes/week-03.html#reflection",
+    "href": "weekly-notes/week-03.html#reflection",
     "title": "Week 2: Dplyr and Census",
     "section": "Reflection",
-    "text": "Reflection\n\nI am excited about the much easier way to access census data through the tidycensus. I have tried to access data sets through the website for GIS projects and it was very difficult. It also seems as though the function that are used to filrter through the data will become second nature and are not complicated. I think what will take the nost time is figuring out the piping and streamlining the data processing."
+    "text": "Reflection\n\nI didn’t realize that the Census had a constant confidence interval of 90%; that seems to make piping your code to test for reliability much simpler. I am excited about applying statistical functions we are learning/ have experience with to census data, as it is supporting my understanding."
   },
   {
-    "objectID": "weekly-notes/week-02.html#questions-i-still-have",
-    "href": "weekly-notes/week-02.html#questions-i-still-have",
+    "objectID": "weekly-notes/week-03.html#questions-i-still-have",
+    "href": "weekly-notes/week-03.html#questions-i-still-have",
     "title": "Week 2: Dplyr and Census",
     "section": "Questions I Still Have",
-    "text": "Questions I Still Have\nCan you filter through the data sets by putting in coordinates of a vector feauture and searching for tracts that fall within that area? Like if you wanted to hand draw a neighborhoods boundaries and search within that vector feature."
+    "text": "Questions I Still Have\nWhat is it about the method in which they collect the data that makes the confidence interval a constant/ how is this calculated?"
   }
 ]

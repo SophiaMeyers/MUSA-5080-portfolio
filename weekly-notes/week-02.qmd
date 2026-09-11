@@ -8,14 +8,14 @@ date: 2026-09-04
 
 <!-- CHANGE THIS: replace with your own notes -->
 
-First we had a quiz.The we learned bout the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus.
+First we had a quiz.Then we learned about the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus.
 
 
 ## Reflection
 
 <!-- CHANGE THIS: 3-4 sentences -->
 
-I am excited about the much easier way to access census data through the tidycensus. I have tried to access data sets through the website for GIS projects and it was very difficult. It also seems as though the function that are used to filrter through the data will become second nature and are not complicated. I think what will take the nost time is figuring out the piping and streamlining the data processing. 
+I am excited about the much easier way to access census data through the tidycensus. I have tried to access data sets through the website for GIS projects and it was very difficult. It also seems as though the function that are used to filter through the data will become second nature and are not complicated. I think what will take the nost time is figuring out the piping and streamlining the data processing. 
 
 ## Questions I Still Have
 
