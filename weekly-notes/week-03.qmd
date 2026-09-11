@@ -1,7 +1,7 @@
 ---
-title: "Week 2: Dplyr and Census"
-description: "Table functions and acs data"
-date: 2026-09-04
+title: "Week 3"
+description: "Plotting reliability of acs data"
+date: 2026-09-11
 ---
 
 ## What We Did

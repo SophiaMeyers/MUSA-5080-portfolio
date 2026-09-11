@@ -214,33 +214,33 @@
     "href": "weekly-notes/index.html",
     "title": "Weekly Notes",
     "section": "",
-    "text": "Notes from each week of MUSA 5080. New entries appear here automatically — add a .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\n\nWeek 2: Dplyr and Census\n\n\nTable functions and acs data\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\nWeek 2: Dplyr and Census\n\n\nTable functions and acs data\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\nWeek 1: Getting Set Up\n\n\nFirst impressions, and getting the workflow running.\n\n\n\n\n\nAug 28, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Notes from each week of MUSA 5080. New entries appear here automatically — add a .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\n\nWeek 3\n\n\nPlotting reliability of acs data\n\n\n\n\n\nSep 11, 2026\n\n\n\n\n\n\n\nWeek 2: Dplyr and Census\n\n\nTable functions and acs data\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\nWeek 1: Getting Set Up\n\n\nFirst impressions, and getting the workflow running.\n\n\n\n\n\nAug 28, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "weekly-notes/week-03.html",
     "href": "weekly-notes/week-03.html",
-    "title": "Week 2: Dplyr and Census",
+    "title": "Week 3",
     "section": "",
     "text": "We learned about calculating reliability of change from the margins of error in census data. We also learned how to create and style plots in R."
   },
   {
     "objectID": "weekly-notes/week-03.html#what-we-did",
     "href": "weekly-notes/week-03.html#what-we-did",
-    "title": "Week 2: Dplyr and Census",
+    "title": "Week 3",
     "section": "",
     "text": "We learned about calculating reliability of change from the margins of error in census data. We also learned how to create and style plots in R."
   },
   {
     "objectID": "weekly-notes/week-03.html#reflection",
     "href": "weekly-notes/week-03.html#reflection",
-    "title": "Week 2: Dplyr and Census",
+    "title": "Week 3",
     "section": "Reflection",
     "text": "Reflection\n\nI didn’t realize that the Census had a constant confidence interval of 90%; that seems to make piping your code to test for reliability much simpler. I am excited about applying statistical functions we are learning/ have experience with to census data, as it is supporting my understanding."
   },
   {
     "objectID": "weekly-notes/week-03.html#questions-i-still-have",
     "href": "weekly-notes/week-03.html#questions-i-still-have",
-    "title": "Week 2: Dplyr and Census",
+    "title": "Week 3",
     "section": "Questions I Still Have",
     "text": "Questions I Still Have\nWhat is it about the method in which they collect the data that makes the confidence interval a constant/ how is this calculated?"
   }
