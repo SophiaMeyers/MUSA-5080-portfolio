@@ -1,0 +1,421 @@
+---
+title: "Verify the Claim: White Philidelphians Living in Higher Rates of Poverty"
+author: "Sophia Meyers"
+date: today
+format:
+  html:
+    theme: lux
+    toc: true
+    code-fold: true
+    code-summary: "Show code"
+    embed-resources: true
+---
+
+# Introduction
+
+Alfred Lubrano reported on changes in poverty and inequality across Philadelphia neighborhoods in 2018, using American Community Survey (ACS) estimates. The article shows large differences in poverty between neighborhoods. This analysis tests whether observed changes between the two periods are statistically distinguishable from zero. I then use the results and the uncertainty associated with the estimates to evaluate how strongly the article's claims can be supported.
+
+[Source](https://whyy.org/articles/new-census-figures-on-philly-neighborhoods-show-inequality-high-numbers-of-whites-living-in-poverty/)
+
+## Part 1: Reconstruct
+
+The article cites the U.S. Census Bureau's 5-Year American Community Survey as its source and compares the 2006-2010 and 2013-2017 periods. The article does not say the exact ACS variables it used, but I assume that its poverty comparisons are based on the number of people below the poverty level relative to the total sample. I therefore use ACS table B17001, with B17001_001 being the total sample and B17001_002 being the population below the poverty level. I calculate the poverty rate for each Philadelphia census tract as the estimated population below poverty divided by the total population.
+I also calculate the margin of error for each poverty-rate estimate, rather than using the margin of error for the poverty count alone. I then calculate the coefficient of variation (CV) to evaluate reliability, following these thresholds: CV values below 12% are considered reliable, values from 12% to 40% are somewhat reliable, and values above 40% are unreliable. The two ACS periods do not overlap in their five-year time windows: 2006-2010 and 2013-2017. Because of this, the differences between the estimates can be interpreted as changes between two distinct periods. They should still be interpreted with the uncertainty associated with each estimate.
+
+```{r}
+#| include: false
+library(tidyverse)
+library(tidycensus)
+
+poverty_2010 <- get_acs(
+  geography = "tract",
+  variables = c(
+    total = "B17001_001",
+    below_poverty = "B17001_002"
+  ),
+  year = 2010,
+  survey = "acs5",
+  state = "PA",
+  county = "Philadelphia"
+)
+
+poverty_2017 <- get_acs(
+  geography = "tract",
+  variables = c(
+    total = "B17001_001",
+    below_poverty = "B17001_002"
+  ),
+  year = 2017,
+  survey = "acs5",
+  state = "PA",
+  county = "Philadelphia"
+)
+```
+
+```{r}
+total_2010 <- poverty_2010 %>%
+  filter(variable == "total")
+
+below_2010 <- poverty_2010 %>%
+  filter(variable == "below_poverty")
+```
+
+```{r}
+total_2017 <- poverty_2017 %>%
+  filter(variable == "total")
+
+below_2017 <- poverty_2017 %>%
+  filter(variable == "below_poverty")
+```
+
+```{r}
+poverty_rate_2010 <- total_2010 %>%
+  select(GEOID, NAME, total = estimate, total_moe = moe) %>%
+  left_join(
+    below_2010 %>%
+      select(GEOID, below_poverty = estimate, below_moe = moe),
+    by = "GEOID"
+  ) %>%
+  mutate(
+    poverty_rate = below_poverty / total
+  )
+```
+
+```{r}
+head(poverty_rate_2010)
+```
+
+```{r}
+poverty_rate_2017 <- total_2017 %>%
+  select(GEOID, NAME, total = estimate, total_moe = moe) %>%
+  left_join(
+    below_2017 %>%
+      select(GEOID, below_poverty = estimate, below_moe = moe),
+    by = "GEOID"
+  ) %>%
+  mutate(
+    poverty_rate = below_poverty / total
+  )
+```
+
+```{r}
+head(poverty_rate_2017)
+```
+
+```{r}
+poverty_rate_2010 <- poverty_rate_2010 %>%
+  mutate(
+    poverty_moe = moe_prop(
+      below_poverty,
+      total,
+      below_moe,
+      total_moe
+    )
+  )
+```
+
+```{r}
+poverty_rate_2017 <- poverty_rate_2017 %>%
+  mutate(
+    poverty_moe = moe_prop(
+      below_poverty,
+      total,
+      below_moe,
+      total_moe
+    )
+  )
+```
+
+```{r}
+head(poverty_rate_2010)
+```
+
+```{r}
+poverty_rate_2010 <- poverty_rate_2010 %>%
+  mutate(
+    cv = (poverty_moe / 1.645) / poverty_rate * 100
+  )
+```
+
+```{r}
+poverty_rate_2017 <- poverty_rate_2017 %>%
+  mutate(
+    cv = (poverty_moe / 1.645) / poverty_rate * 100
+  )
+```
+
+```{r}
+poverty_rate_2010 <- poverty_rate_2010 %>%
+  mutate(
+    reliability = case_when(
+      cv < 12 ~ "Reliable",
+      cv <= 40 ~ "Somewhat reliable",
+      cv > 40 ~ "Unreliable"
+    )
+  )
+```
+
+```{r}
+poverty_rate_2017 <- poverty_rate_2017 %>%
+  mutate(
+    reliability = case_when(
+      cv < 12 ~ "Reliable",
+      cv <= 40 ~ "Somewhat reliable",
+      cv > 40 ~ "Unreliable"
+    )
+  )
+```
+
+```{r}
+table(poverty_rate_2010$reliability)
+```
+
+```{r}
+table(poverty_rate_2017$reliability)
+```
+
+```{r}
+#| include: false
+library(gt)
+```
+
+```{r}
+reliability_table <- poverty_rate_2017 %>%
+  mutate(
+    symbol = case_when(
+      cv < 12 ~ "🟢",
+      cv <= 40 ~ "🟡",
+      TRUE ~ "🔴"
+    )
+  ) %>%
+  arrange(desc(cv)) %>%
+  slice_head(n = 25) %>%
+  select(symbol, NAME, poverty_rate, poverty_moe, cv, reliability)
+```
+
+```{r}
+#| echo: false
+reliability_table %>%
+  gt() %>%
+  fmt_number(
+    columns = poverty_rate,
+    decimals = 3
+  ) %>%
+  fmt_number(
+    columns = c(poverty_moe, cv),
+    decimals = 1
+  ) %>%
+  cols_label(
+    symbol = "",
+    NAME = "Census Tract",
+    poverty_rate = "Poverty Rate",
+    poverty_moe = "MOE",
+    cv = "CV (%)",
+    reliability = "Reliability"
+  ) %>%
+  tab_header(
+    title = "Least Reliable Poverty Rate Estimates",
+    subtitle = "Philadelphia census tracts, 2013–2017 ACS 5-year estimates"
+  ) %>%
+  tab_source_note(
+    "Reliability thresholds follow Jurjevich et al. (2018): CV < 12% reliable, 12–40% somewhat reliable, and > 40% unreliable."
+  )
+```
+
+
+## Part 2: Test
+
+The next step is to see if the difference between the two poverty-rate estimates represents a statistically significant change or could instead be explained by sampling uncertainty. For each census tract, I calculate the change in poverty rate between 2006-2010 and 2013-2017 and calculate a margin of error for that change by combining the uncertainty from both estimates. I use the 90% confidence interval, consistent with the ACS margin of error, to determine whether each change is statistically distinguishable from zero.
+
+```{r}
+poverty_change <- poverty_rate_2010 %>%
+  select(
+    GEOID,
+    NAME,
+    poverty_rate_2010 = poverty_rate,
+    poverty_moe_2010 = poverty_moe
+  ) %>%
+  left_join(
+    poverty_rate_2017 %>%
+      select(
+        GEOID,
+        poverty_rate_2017 = poverty_rate,
+        poverty_moe_2017 = poverty_moe
+      ),
+    by = "GEOID"
+  ) %>%
+  mutate(
+    change = poverty_rate_2017 - poverty_rate_2010
+  )
+```
+
+```{r}
+poverty_change <- poverty_change %>%
+  mutate(
+    se_2010 = poverty_moe_2010 / 1.645,
+    se_2017 = poverty_moe_2017 / 1.645,
+    se_change = sqrt(se_2010^2 + se_2017^2),
+    change_moe = se_change * 1.645
+  )
+```
+
+```{r}
+poverty_change <- poverty_change %>%
+  mutate(
+    lower = change - change_moe,
+    upper = change + change_moe
+  )
+```
+
+```{r}
+poverty_change <- poverty_change %>%
+  mutate(
+    significant = case_when(
+      lower > 0 ~ "Increase",
+      upper < 0 ~ "Decrease",
+      TRUE ~ "No detectable change"
+    )
+  )
+```
+
+```{r}
+sum(is.na(poverty_change$change))
+```
+
+```{r}
+poverty_change %>%
+  filter(is.na(change)) %>%
+  select(GEOID, NAME)
+```
+
+```{r}
+poverty_change %>%
+  filter(is.na(change)) %>%
+  select(
+    GEOID,
+    NAME,
+    poverty_rate_2010,
+    poverty_rate_2017
+  )
+```
+
+```{r}
+poverty_change %>%
+  filter(is.na(change)) %>%
+  select(GEOID, NAME)
+```
+
+```{r}
+poverty_rate_2010 %>%
+  filter(GEOID %in% poverty_change$GEOID[is.na(poverty_change$change)]) %>%
+  select(GEOID, NAME, total, below_poverty)
+```
+
+```{r}
+poverty_rate_2017 %>%
+  filter(GEOID %in% poverty_change$GEOID[is.na(poverty_change$change)]) %>%
+  select(GEOID, NAME, total, below_poverty)
+```
+
+```{r}
+poverty_change_complete <- poverty_change %>%
+  filter(!is.na(change))
+```
+
+```{r}
+nrow(poverty_change_complete)
+```
+
+```{r}
+table(poverty_change_complete$significant)
+```
+
+```{r}
+prop.table(table(poverty_change_complete$significant)) * 100
+```
+
+```{r}
+#| echo: false
+poverty_change_complete %>%
+  filter(significant != "No detectable change") %>%
+  arrange(desc(abs(change))) %>%
+  slice_head(n = 20) %>%
+  mutate(
+    NAME = str_remove(NAME, "Census Tract "),
+    NAME = str_remove(NAME, ", Philadelphia County, Pennsylvania"),
+    direction = if_else(change > 0, "Increase", "Decrease")
+  ) %>%
+  ggplot(aes(x = reorder(NAME, change), y = change)) +
+  geom_col(aes(fill = direction)) +
+  geom_errorbar(
+    aes(
+      ymin = change - change_moe,
+      ymax = change + change_moe
+    ),
+    width = 0.3
+  ) +
+  geom_hline(
+    yintercept = 0,
+    linetype = "dashed"
+  ) +
+  coord_flip() +
+ theme_minimal() +
+  theme(
+    panel.grid = element_blank()
+  ) +
+  scale_y_continuous(
+    labels = scales::percent
+  ) +
+  scale_fill_manual(
+    values = c(
+      "Decrease" = "pink",
+      "Increase" = "lightblue"
+    )
+  ) +
+  labs(
+    title = "Largest Statistically Detectable Changes in Poverty",
+    subtitle = "2006–2010 vs. 2013–2017 ACS 5-year estimates",
+    x = "Census tract",
+    y = "Change in poverty rate",
+    fill = "Change"
+  ) +
+  theme(
+    legend.position = "bottom"
+  )
+```
+
+The results suggest that changes in poverty rates were not widespread across Philadelphia census tracts. Some tracts show changes large enough to be statistically distinguishable from zero, but the majority of tracts do not have a detectable change once the margins of error are taken into account. This distinction is important because subtracting one ACS estimate from another can make a change appear meaningful even when the uncertainty surrounding the estimates is large enough that the true change could be zero.
+The reliability analysis provides context for interpreting the results. ACS estimates are based on samples rather than a complete count of the population, so the precision of the poverty-rate estimates varies across census tracts. Smaller populations are less precise estimates, which can produce larger coefficients of variation. The observed changes provide evidence of some tract-level change, but they do not support the conclusion that poverty changed substantially throughout Philadelphia. The results suggest that the claims about neighborhood change really need to account for the uncertainty surrounding the ACS estimates.
+
+
+## Part 3: Adjudicate
+
+The ACS data support the article's broader claim that poverty is unevenly distributed across Philadelphia. The tract-level estimates show substantial differences in poverty rates between census tracts during 2013-2017. Some tracts have very high poverty rates while others have much lower rates. This pattern is consistent with the article's description of a large economic divide between Philadelphia neighborhoods. The distribution of poverty across tracts supports the article's broader argument that economic inequality is geographically determined within the city.
+The data do not provide enough evidence to conclude that poverty broadly increased or decreased across Philadelphia between 2006-2010 and 2013-2017. After accounting for the margin of error of both ACS estimates, of the 376 census tracts with defined poverty rates in both periods, most show no statistically detectable change; An observed difference in a tract's poverty rate is not necessarily evidence of a real change, it may be explained by sampling uncertainty. The data do not support a broad conclusion that poverty substantially changed throughout Philadelphia during this period.
+
+
+```{r}
+#| echo: false
+poverty_change_complete %>%
+  count(significant) %>%
+  ggplot(aes(x = significant, y = n)) +
+  geom_col() +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank()
+  ) +
+  labs(
+    title = "Most Census Tracts Show No Detectable Change in Poverty",
+    subtitle = "2006–2010 vs. 2013–2017 ACS 5-year estimates",
+    x = "Result of statistical test",
+    y = "Number of census tracts"
+  )
+```
+
+The article uses Philadelphia neighborhood names such as Fairhill and Schuylkill-Southwest Center City, but it doesn't say which census tracts were included in each neighborhood or provide the exact method used to aggregate the ACS data into those neighborhood boundaries (considering they aren't officially defined). I can reproduce the underlying ACS estimates at the census-tract level, but I cannot determine exactly which tracts were combined to produce the article's neighborhood-level estimates. The specific numerical changes attributed to individual neighborhoods cannot be directly verified from the information provided by the article.
+
+## Part 4: Rewrite
+
+New five-year estimates from the U.S. Census Bureau’s American Community Survey show that Philadelphia continues to experience substantial geographic inequality in poverty. The 2013-2017 estimates reveal large differences in poverty rates across census tracts, consistent with the city’s persistent economic divide. In comparison with the 2006-2010 estimates provide less evidence that poverty broadly changed across the city. After accounting for the margins of error, most census tracts show no statistically detectable change in their poverty rates. The results suggest that Philadelphia remained highly unequal, but they do not support the conclusion that poverty increased or decreased substantially throughout the city. Changes in individual tracts should be interpreted cautiously because ACS estimates are based on samples.
+(Adjusted from the [article](https://whyy.org/articles/new-census-figures-on-philly-neighborhoods-show-inequality-high-numbers-of-whites-living-in-poverty/))
+
