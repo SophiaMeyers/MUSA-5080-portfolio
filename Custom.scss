@@ -1,0 +1,60 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+$primary: #000000;
+$link-color: #FF4B33;
+$body-bg: #ffffff;
+$body-color: #000000;
+$border-color: #000000;
+
+$navbar-light-bg: #000000;
+$navbar-light-color: #ffffff;
+$navbar-light-active-color: #ffffff;
+$navbar-light-hover-color: #ffffff;
+
+$text-muted: #000000;
+$small-font-size: 0.75rem;
+
+$font-family-sans-serif: "Roboto Mono", monospace;
+$font-family-monospace: "Roboto Mono", monospace;
+
+$font-size-base: 0.85rem;
+$h1-font-size: 3.5rem;
+$h2-font-size: 2.2rem;
+$headings-font-weight: 700;
+
+/*-- scss:rules --*/
+
+
+body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, button, .navbar, .sidebar {
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em;
+}
+.navbar .nav-link,
+.navbar-brand,
+.navbar-toggler,
+.navbar-toggler-icon {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.text-muted,
+.quarto-title-meta,
+.quarto-title-meta-heading,
+figcaption,
+.caption,
+.listing-categories .listing-category {
+  color: #000000 !important;
+  opacity: 1 !important;
+  font-size: 0.75rem !important;
+}
+
+* {
+  border-radius: 0px !important;
+}
+
+hr {
+  border-color: #000000 !important;
+  opacity: 1;
+}

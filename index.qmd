@@ -29,5 +29,5 @@ I'm a student in the MUSA program at Penn. My background is in Geography at the 
 
 <!-- CHANGE THIS -->
 
-- Email: someyers@upenn.edu
+- Email: sophia.jean.meyers@gmail.com
 - GitHub: [@SophiaMeyers](https://github.com/SophiaMeyers)

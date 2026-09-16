@@ -4,7 +4,7 @@ project:
   execute-dir: project
 
 website:
-  title: "Sophia Meyers - MUSA 5080 Portfolio"        # <-- CHANGE THIS
+  title: "Sophia Meyers - MUSA 5080 Portfolio"
   description: "Public Policy Analytics portfolio"
   navbar:
     title: "Portfolio"
@@ -23,8 +23,10 @@ website:
 
 format:
   html:
-    theme: lux
-    toc: true
+    theme: #trying to customize it
+    - lux
+    - Custom.scss
+    toc: true #trying to customize it
     code-fold: false
     code-tools: true
 

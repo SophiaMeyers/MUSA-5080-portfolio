@@ -421,8 +421,8 @@ poverty_change_complete %>%
   ) +
   scale_fill_manual(
     values = c(
-      "Decrease" = "lightgreen",
-      "Increase" = "lightblue"
+      "Decrease" = "darkgrey",
+      "Increase" = "lightgrey"
     )
   ) +
   labs(
