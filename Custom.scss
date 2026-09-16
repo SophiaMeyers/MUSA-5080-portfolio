@@ -26,6 +26,14 @@ $headings-font-weight: 700;
 
 /*-- scss:rules --*/
 
+.internal-link, a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.internal-link:hover, a:hover {
+    color: #ff5733 !important;
+}
 
 body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, button, .navbar, .sidebar {
   text-transform: uppercase !important;
