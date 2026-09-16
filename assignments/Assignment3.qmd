@@ -1,14 +1,14 @@
 ---
-title: "Verify the Claim: White Philidelphians Living in Higher Rates of Poverty"
+title: "Verify the Claim: White Philidelphians Living in Higher Rates of Poverty?"
 author: "Sophia Meyers"
 date: today
-format:
-  html:
-    theme: lux
-    toc: true
-    code-fold: true
-    code-summary: "Show code"
-    embed-resources: true
+# format:
+#   html:
+#     theme: lux
+#     toc: true
+#     code-fold: true
+#     code-summary: "Show code"
+#     embed-resources: true
 ---
 
 # Introduction
@@ -26,7 +26,10 @@ I also calculate the margin of error for each poverty-rate estimate, rather than
 #| include: false
 library(tidyverse)
 library(tidycensus)
+```
 
+```{r}
+#| code-fold: true
 poverty_2010 <- get_acs(
   geography = "tract",
   variables = c(
@@ -53,6 +56,8 @@ poverty_2017 <- get_acs(
 ```
 
 ```{r}
+#| code-fold: true
+
 total_2010 <- poverty_2010 %>%
   filter(variable == "total")
 
@@ -61,6 +66,8 @@ below_2010 <- poverty_2010 %>%
 ```
 
 ```{r}
+#| code-fold: true
+
 total_2017 <- poverty_2017 %>%
   filter(variable == "total")
 
@@ -69,6 +76,8 @@ below_2017 <- poverty_2017 %>%
 ```
 
 ```{r}
+#| code-fold: true
+
 poverty_rate_2010 <- total_2010 %>%
   select(GEOID, NAME, total = estimate, total_moe = moe) %>%
   left_join(
@@ -82,10 +91,8 @@ poverty_rate_2010 <- total_2010 %>%
 ```
 
 ```{r}
-head(poverty_rate_2010)
-```
+#| code-fold: true
 
-```{r}
 poverty_rate_2017 <- total_2017 %>%
   select(GEOID, NAME, total = estimate, total_moe = moe) %>%
   left_join(
@@ -99,10 +106,8 @@ poverty_rate_2017 <- total_2017 %>%
 ```
 
 ```{r}
-head(poverty_rate_2017)
-```
+#| code-fold: true
 
-```{r}
 poverty_rate_2010 <- poverty_rate_2010 %>%
   mutate(
     poverty_moe = moe_prop(
@@ -115,6 +120,8 @@ poverty_rate_2010 <- poverty_rate_2010 %>%
 ```
 
 ```{r}
+#| code-fold: true
+
 poverty_rate_2017 <- poverty_rate_2017 %>%
   mutate(
     poverty_moe = moe_prop(
@@ -127,10 +134,8 @@ poverty_rate_2017 <- poverty_rate_2017 %>%
 ```
 
 ```{r}
-head(poverty_rate_2010)
-```
+#| code-fold: true
 
-```{r}
 poverty_rate_2010 <- poverty_rate_2010 %>%
   mutate(
     cv = (poverty_moe / 1.645) / poverty_rate * 100
@@ -138,6 +143,8 @@ poverty_rate_2010 <- poverty_rate_2010 %>%
 ```
 
 ```{r}
+#| code-fold: true
+
 poverty_rate_2017 <- poverty_rate_2017 %>%
   mutate(
     cv = (poverty_moe / 1.645) / poverty_rate * 100
@@ -145,6 +152,8 @@ poverty_rate_2017 <- poverty_rate_2017 %>%
 ```
 
 ```{r}
+#| code-fold: true
+
 poverty_rate_2010 <- poverty_rate_2010 %>%
   mutate(
     reliability = case_when(
@@ -156,6 +165,8 @@ poverty_rate_2010 <- poverty_rate_2010 %>%
 ```
 
 ```{r}
+#| code-fold: true
+
 poverty_rate_2017 <- poverty_rate_2017 %>%
   mutate(
     reliability = case_when(
@@ -167,10 +178,16 @@ poverty_rate_2017 <- poverty_rate_2017 %>%
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
 table(poverty_rate_2010$reliability)
+
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
+
 table(poverty_rate_2017$reliability)
 ```
 
@@ -180,6 +197,8 @@ library(gt)
 ```
 
 ```{r}
+#| code-fold: true
+
 reliability_table <- poverty_rate_2017 %>%
   mutate(
     symbol = case_when(
@@ -189,12 +208,14 @@ reliability_table <- poverty_rate_2017 %>%
     )
   ) %>%
   arrange(desc(cv)) %>%
-  slice_head(n = 25) %>%
+  slice_head(n = 15) %>%
   select(symbol, NAME, poverty_rate, poverty_moe, cv, reliability)
 ```
 
 ```{r}
 #| echo: false
+#| label: tbl-reliability
+#| tbl-cap: "Poverty-rate estimate reliability for the 15 Philadelphia census tracts with the highest CV, 2013-2017."
 reliability_table %>%
   gt() %>%
   fmt_number(
@@ -215,11 +236,12 @@ reliability_table %>%
   ) %>%
   tab_header(
     title = "Least Reliable Poverty Rate Estimates",
-    subtitle = "Philadelphia census tracts, 2013–2017 ACS 5-year estimates"
+    subtitle = "Philadelphia census tracts, 2013-2017 ACS 5-year estimates"
   ) %>%
   tab_source_note(
-    "Reliability thresholds follow Jurjevich et al. (2018): CV < 12% reliable, 12–40% somewhat reliable, and > 40% unreliable."
+    "Reliability thresholds: CV < 12% reliable, 12-40% somewhat reliable, and > 40% unreliable."
   )
+
 ```
 
 
@@ -228,6 +250,8 @@ reliability_table %>%
 The next step is to see if the difference between the two poverty-rate estimates represents a statistically significant change or could instead be explained by sampling uncertainty. For each census tract, I calculate the change in poverty rate between 2006-2010 and 2013-2017 and calculate a margin of error for that change by combining the uncertainty from both estimates. I use the 90% confidence interval, consistent with the ACS margin of error, to determine whether each change is statistically distinguishable from zero.
 
 ```{r}
+#| code-fold: true
+
 poverty_change <- poverty_rate_2010 %>%
   select(
     GEOID,
@@ -250,6 +274,8 @@ poverty_change <- poverty_rate_2010 %>%
 ```
 
 ```{r}
+#| code-fold: true
+
 poverty_change <- poverty_change %>%
   mutate(
     se_2010 = poverty_moe_2010 / 1.645,
@@ -260,6 +286,8 @@ poverty_change <- poverty_change %>%
 ```
 
 ```{r}
+#| code-fold: true
+
 poverty_change <- poverty_change %>%
   mutate(
     lower = change - change_moe,
@@ -268,6 +296,8 @@ poverty_change <- poverty_change %>%
 ```
 
 ```{r}
+#| code-fold: true
+
 poverty_change <- poverty_change %>%
   mutate(
     significant = case_when(
@@ -279,16 +309,23 @@ poverty_change <- poverty_change %>%
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
+
 sum(is.na(poverty_change$change))
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
 poverty_change %>%
   filter(is.na(change)) %>%
   select(GEOID, NAME)
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
 poverty_change %>%
   filter(is.na(change)) %>%
   select(
@@ -300,42 +337,58 @@ poverty_change %>%
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
 poverty_change %>%
   filter(is.na(change)) %>%
   select(GEOID, NAME)
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
 poverty_rate_2010 %>%
   filter(GEOID %in% poverty_change$GEOID[is.na(poverty_change$change)]) %>%
   select(GEOID, NAME, total, below_poverty)
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
 poverty_rate_2017 %>%
   filter(GEOID %in% poverty_change$GEOID[is.na(poverty_change$change)]) %>%
   select(GEOID, NAME, total, below_poverty)
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
 poverty_change_complete <- poverty_change %>%
   filter(!is.na(change))
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
 nrow(poverty_change_complete)
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
 table(poverty_change_complete$significant)
 ```
 
 ```{r}
+#| include: false
+#| code-fold: true
 prop.table(table(poverty_change_complete$significant)) * 100
 ```
 
 ```{r}
 #| echo: false
+#| label: fig-largest-changes
+#| fig-cap: "The 20 largest statistically detectable changes in census-tract poverty rates between 2006-2010 and 2013-2017, with error bars showing the 90% margin of error."
 poverty_change_complete %>%
   filter(significant != "No detectable change") %>%
   arrange(desc(abs(change))) %>%
@@ -368,13 +421,13 @@ poverty_change_complete %>%
   ) +
   scale_fill_manual(
     values = c(
-      "Decrease" = "pink",
+      "Decrease" = "lightgreen",
       "Increase" = "lightblue"
     )
   ) +
   labs(
     title = "Largest Statistically Detectable Changes in Poverty",
-    subtitle = "2006–2010 vs. 2013–2017 ACS 5-year estimates",
+    subtitle = "2006-2010 vs. 2013-2017 ACS 5-year estimates",
     x = "Census tract",
     y = "Change in poverty rate",
     fill = "Change"
@@ -383,6 +436,8 @@ poverty_change_complete %>%
     legend.position = "bottom"
   )
 ```
+
+
 
 The results suggest that changes in poverty rates were not widespread across Philadelphia census tracts. Some tracts show changes large enough to be statistically distinguishable from zero, but the majority of tracts do not have a detectable change once the margins of error are taken into account. This distinction is important because subtracting one ACS estimate from another can make a change appear meaningful even when the uncertainty surrounding the estimates is large enough that the true change could be zero.
 The reliability analysis provides context for interpreting the results. ACS estimates are based on samples rather than a complete count of the population, so the precision of the poverty-rate estimates varies across census tracts. Smaller populations are less precise estimates, which can produce larger coefficients of variation. The observed changes provide evidence of some tract-level change, but they do not support the conclusion that poverty changed substantially throughout Philadelphia. The results suggest that the claims about neighborhood change really need to account for the uncertainty surrounding the ACS estimates.
@@ -396,6 +451,8 @@ The data do not provide enough evidence to conclude that poverty broadly increas
 
 ```{r}
 #| echo: false
+#| label: fig-detectable-change
+#| fig-cap: "Number of Philadelphia census tracts showing a statistically detectable increase, decrease, or no detectable change in poverty rates between 2006-2010 and 2013-2017."
 poverty_change_complete %>%
   count(significant) %>%
   ggplot(aes(x = significant, y = n)) +
@@ -406,7 +463,7 @@ poverty_change_complete %>%
   ) +
   labs(
     title = "Most Census Tracts Show No Detectable Change in Poverty",
-    subtitle = "2006–2010 vs. 2013–2017 ACS 5-year estimates",
+    subtitle = "2006-2010 vs. 2013-2017 ACS 5-year estimates",
     x = "Result of statistical test",
     y = "Number of census tracts"
   )

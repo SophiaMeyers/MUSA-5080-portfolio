@@ -1,5 +1,5 @@
 ---
-title: "Week 3"
+title: "Week 3: Calculating Reliability of Samples"
 description: "Plotting reliability of acs data"
 date: 2026-09-11
 ---

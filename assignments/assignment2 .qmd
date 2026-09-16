@@ -1,5 +1,5 @@
 ---
-title: "Assignment 2: Who Do We Know the Least About?"
+title: "Who Do We Know the Least About?"
 subtitle: "Measuring uncertainty in American Community Survey data"
 author: "Sophia Meyers"
 date: today
