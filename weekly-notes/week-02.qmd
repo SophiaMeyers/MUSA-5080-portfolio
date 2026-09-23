@@ -1,5 +1,5 @@
 ---
-title: "Week 2: Dplyr and Census"
+title: "Week 2: Algorithms in government · R & dplyr foundations · Census and ACS"
 description: "Table functions and acs data"
 date: 2026-09-04
 ---

@@ -3,6 +3,8 @@ project:
   output-dir: docs
   execute-dir: project
 
+
+
 website:
   title: "Sophia Meyers - MUSA 5080 Portfolio"
   description: "Public Policy Analytics portfolio"
@@ -28,6 +30,7 @@ format:
     - Custom.scss
     toc: true #trying to customize it
     code-fold: false
+    embed-resources: true
     code-tools: true
 
 execute:

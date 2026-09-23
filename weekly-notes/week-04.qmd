@@ -1,0 +1,20 @@
+---
+title: "Week 4: Spatial data · sf · spatial operations · neighborhood indicators "
+description: ""
+date: 2026-09-11
+---
+
+## What We Did
+
+<!-- CHANGE THIS: replace with your own notes -->
+We learned how to apply spatial information to our acs data with a geometry column, and how adjusts and name its coordinate reference system.
+
+
+## Reflection
+
+<!-- CHANGE THIS: 3-4 sentences -->
+
+
+## Questions I Still Have
+What are examples of times in which you would find government spatial data set without a named and accurate coordinate reference system?
+

@@ -1,5 +1,5 @@
 ---
-title: "Week 3: Calculating Reliability of Samples"
+title: "Week 3: Visualization · exploratory data analysis · joins"
 description: "Plotting reliability of acs data"
 date: 2026-09-11
 ---

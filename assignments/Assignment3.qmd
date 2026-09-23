@@ -2,13 +2,12 @@
 title: "Verify the Claim: White Philidelphians Living in Higher Rates of Poverty?"
 author: "Sophia Meyers"
 date: today
-# format:
+ #format:
 #   html:
-#     theme: lux
-#     toc: true
-#     code-fold: true
-#     code-summary: "Show code"
-#     embed-resources: true
+ #    toc: true
+  #   code-fold: true
+   #  code-summary: "Show code"
+    # embed-resources: true
 ---
 
 # Introduction
