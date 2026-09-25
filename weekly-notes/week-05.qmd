@@ -1,0 +1,18 @@
+---
+title: "Week 5: Linear Regression I · making predictions "
+description: ""
+date: 2026-09-25
+---
+
+## What We Did
+
+<!-- CHANGE THIS: replace with your own notes -->
+We learned about the differences between traditional regression models creating machine learning regression models/ how they are cross validated. 
+
+## Reflection
+
+<!-- CHANGE THIS: 3-4 sentences -->
+I want to see how spatial features can be used as data in a machine learning model to strengthen the predictions. For example, distance from a feature within a boundary.
+
+## Questions I Still Have
+For a traditional regression model, how can a point on a regression line have a different p-value than another point. Shouldn't the y-intercept of the line have the same significance?

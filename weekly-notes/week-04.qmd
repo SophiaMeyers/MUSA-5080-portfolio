@@ -1,7 +1,7 @@
 ---
 title: "Week 4: Spatial data · sf · spatial operations · neighborhood indicators "
 description: ""
-date: 2026-09-11
+date: 2026-09-18
 ---
 
 ## What We Did

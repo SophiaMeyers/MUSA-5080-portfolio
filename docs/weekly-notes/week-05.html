@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-09-18">
+<meta name="dcterms.date" content="2026-09-25">
 
-<title>Week 4: Spatial data · sf · spatial operations · neighborhood indicators – Sophia Meyers - MUSA 5080 Portfolio</title>
+<title>Week 5: Linear Regression I · making predictions – Sophia Meyers - MUSA 5080 Portfolio</title>
 <style>
 
 span.smallcaps{font-variant: small-caps;}
@@ -4106,7 +4106,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Week 4: Spatial data · sf · spatial operations · neighborhood indicators</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Week 5: Linear Regression I · making predictions</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -4117,7 +4117,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 18, 2026</p>
+      <p class="date">September 25, 2026</p>
     </div>
   </div>
   
@@ -4132,15 +4132,16 @@ vertical-align: -.125em;
 <section id="what-we-did" class="level2">
 <h2 class="anchored" data-anchor-id="what-we-did">What We Did</h2>
 <!-- CHANGE THIS: replace with your own notes -->
-<p>We learned how to apply spatial information to our acs data with a geometry column, and how adjusts and name its coordinate reference system.</p>
+<p>We learned about the differences between traditional regression models creating machine learning regression models/ how they are cross validated.</p>
 </section>
 <section id="reflection" class="level2">
 <h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
 <!-- CHANGE THIS: 3-4 sentences -->
+<p>I want to see how spatial features can be used as data in a machine learning model to strengthen the predictions. For example, distance from a feature within a boundary.</p>
 </section>
 <section id="questions-i-still-have" class="level2">
 <h2 class="anchored" data-anchor-id="questions-i-still-have">Questions I Still Have</h2>
-<p>What are examples of times in which you would find government spatial data set without a named and accurate coordinate reference system?</p>
+<p>For a traditional regression model, how can a point on a regression line have a different p-value than another point. Shouldn’t the y-intercept of the line have the same significance?</p>
 
 
 <!-- -->
@@ -4600,24 +4601,23 @@ vertical-align: -.125em;
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Week 4: Spatial data · sf · spatial operations · neighborhood indicators &quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Week 5: Linear Regression I · making predictions &quot;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> &quot;&quot;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2026-09-18</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2026-09-25</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## What We Did</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- CHANGE THIS: replace with your own notes --&gt;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>We learned how to apply spatial information to our acs data with a geometry column, and how adjusts and name its coordinate reference system.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>We learned about the differences between traditional regression models creating machine learning regression models/ how they are cross validated. </span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reflection</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- CHANGE THIS: 3-4 sentences --&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reflection</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- CHANGE THIS: 3-4 sentences --&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>I want to see how spatial features can be used as data in a machine learning model to strengthen the predictions. For example, distance from a feature within a boundary.</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Questions I Still Have</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>What are examples of times in which you would find government spatial data set without a named and accurate coordinate reference system?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Questions I Still Have</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>For a traditional regression model, how can a point on a regression line have a different p-value than another point. Shouldn&#39;t the y-intercept of the line have the same significance?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
