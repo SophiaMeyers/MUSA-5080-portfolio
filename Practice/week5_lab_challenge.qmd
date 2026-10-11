@@ -21,10 +21,6 @@ The first part of the lab (Parts 0–7) is guided and builds your toolkit. **Typ
 
 ## Part 0: Setup
 
-```{r}
-install.packages("caret", dependencies = TRUE)
-install.packages("lmtest")
-```
 
 
 ```{r}

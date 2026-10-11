@@ -1,5 +1,61 @@
 [
   {
+    "objectID": "weekly-notes/week-05.html",
+    "href": "weekly-notes/week-05.html",
+    "title": "Week 5: Linear Regression I · making predictions",
+    "section": "",
+    "text": "We learned about the differences between traditional regression models creating machine learning regression models/ how they are cross validated."
+  },
+  {
+    "objectID": "weekly-notes/week-05.html#what-we-did",
+    "href": "weekly-notes/week-05.html#what-we-did",
+    "title": "Week 5: Linear Regression I · making predictions",
+    "section": "",
+    "text": "We learned about the differences between traditional regression models creating machine learning regression models/ how they are cross validated."
+  },
+  {
+    "objectID": "weekly-notes/week-05.html#reflection",
+    "href": "weekly-notes/week-05.html#reflection",
+    "title": "Week 5: Linear Regression I · making predictions",
+    "section": "Reflection",
+    "text": "Reflection\n\nI want to see how spatial features can be used as data in a machine learning model to strengthen the predictions. For example, distance from a feature within a boundary."
+  },
+  {
+    "objectID": "weekly-notes/week-05.html#questions-i-still-have",
+    "href": "weekly-notes/week-05.html#questions-i-still-have",
+    "title": "Week 5: Linear Regression I · making predictions",
+    "section": "Questions I Still Have",
+    "text": "Questions I Still Have\nFor a traditional regression model, how can a point on a regression line have a different p-value than another point. Shouldn’t the y-intercept of the line have the same significance?"
+  },
+  {
+    "objectID": "weekly-notes/week-03.html",
+    "href": "weekly-notes/week-03.html",
+    "title": "Week 3: Visualization · exploratory data analysis · joins",
+    "section": "",
+    "text": "We learned about calculating reliability of change from the margins of error in census data. We also learned how to create and style plots in R."
+  },
+  {
+    "objectID": "weekly-notes/week-03.html#what-we-did",
+    "href": "weekly-notes/week-03.html#what-we-did",
+    "title": "Week 3: Visualization · exploratory data analysis · joins",
+    "section": "",
+    "text": "We learned about calculating reliability of change from the margins of error in census data. We also learned how to create and style plots in R."
+  },
+  {
+    "objectID": "weekly-notes/week-03.html#reflection",
+    "href": "weekly-notes/week-03.html#reflection",
+    "title": "Week 3: Visualization · exploratory data analysis · joins",
+    "section": "Reflection",
+    "text": "Reflection\n\nI didn’t realize that the Census had a constant confidence interval of 90%; that seems to make piping your code to test for reliability much simpler. I am excited about applying statistical functions we are learning/ have experience with to census data, as it is supporting my understanding."
+  },
+  {
+    "objectID": "weekly-notes/week-03.html#questions-i-still-have",
+    "href": "weekly-notes/week-03.html#questions-i-still-have",
+    "title": "Week 3: Visualization · exploratory data analysis · joins",
+    "section": "Questions I Still Have",
+    "text": "Questions I Still Have\nWhat is it about the method in which they collect the data that makes the confidence interval a constant/ how is this calculated?"
+  },
+  {
     "objectID": "weekly-notes/week-01.html",
     "href": "weekly-notes/week-01.html",
     "title": "Week 1: Getting Set Up",
@@ -49,69 +105,6 @@
     "text": "-I’m curious about how we can apply the technical skills from this course to real-world urban decision-making."
   },
   {
-    "objectID": "weekly-notes/week-02.html",
-    "href": "weekly-notes/week-02.html",
-    "title": "Week 2: Algorithms in government · R & dplyr foundations · Census and ACS",
-    "section": "",
-    "text": "First we had a quiz.Then we learned about the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus."
-  },
-  {
-    "objectID": "weekly-notes/week-02.html#what-we-did",
-    "href": "weekly-notes/week-02.html#what-we-did",
-    "title": "Week 2: Algorithms in government · R & dplyr foundations · Census and ACS",
-    "section": "",
-    "text": "First we had a quiz.Then we learned about the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus."
-  },
-  {
-    "objectID": "weekly-notes/week-02.html#reflection",
-    "href": "weekly-notes/week-02.html#reflection",
-    "title": "Week 2: Algorithms in government · R & dplyr foundations · Census and ACS",
-    "section": "Reflection",
-    "text": "Reflection\n\nI am excited about the much easier way to access census data through the tidycensus. I have tried to access data sets through the website for GIS projects and it was very difficult. It also seems as though the function that are used to filter through the data will become second nature and are not complicated. I think what will take the nost time is figuring out the piping and streamlining the data processing."
-  },
-  {
-    "objectID": "weekly-notes/week-02.html#questions-i-still-have",
-    "href": "weekly-notes/week-02.html#questions-i-still-have",
-    "title": "Week 2: Algorithms in government · R & dplyr foundations · Census and ACS",
-    "section": "Questions I Still Have",
-    "text": "Questions I Still Have\nCan you filter through the data sets by putting in coordinates of a vector feauture and searching for tracts that fall within that area? Like if you wanted to hand draw a neighborhoods boundaries and search within that vector feature."
-  },
-  {
-    "objectID": "weekly-notes/week-04.html",
-    "href": "weekly-notes/week-04.html",
-    "title": "Week 4: Spatial data · sf · spatial operations · neighborhood indicators",
-    "section": "",
-    "text": "We learned how to apply spatial information to our acs data with a geometry column, and how adjusts and name its coordinate reference system."
-  },
-  {
-    "objectID": "weekly-notes/week-04.html#what-we-did",
-    "href": "weekly-notes/week-04.html#what-we-did",
-    "title": "Week 4: Spatial data · sf · spatial operations · neighborhood indicators",
-    "section": "",
-    "text": "We learned how to apply spatial information to our acs data with a geometry column, and how adjusts and name its coordinate reference system."
-  },
-  {
-    "objectID": "weekly-notes/week-04.html#reflection",
-    "href": "weekly-notes/week-04.html#reflection",
-    "title": "Week 4: Spatial data · sf · spatial operations · neighborhood indicators",
-    "section": "Reflection",
-    "text": "Reflection"
-  },
-  {
-    "objectID": "weekly-notes/week-04.html#questions-i-still-have",
-    "href": "weekly-notes/week-04.html#questions-i-still-have",
-    "title": "Week 4: Spatial data · sf · spatial operations · neighborhood indicators",
-    "section": "Questions I Still Have",
-    "text": "Questions I Still Have\nWhat are examples of times in which you would find government spatial data set without a named and accurate coordinate reference system?"
-  },
-  {
-    "objectID": "data/readme.html",
-    "href": "data/readme.html",
-    "title": "",
-    "section": "",
-    "text": "Code\n\n\n\n\nData files for MUSA 5080\nDownload assignment data from Canvas and save it here. Do not rename the files! Have a nice day :)"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Home",
@@ -140,11 +133,102 @@
     "text": "Email: sophia.jean.meyers@gmail.com\nGitHub: @SophiaMeyers"
   },
   {
-    "objectID": "assignments/index.html",
-    "href": "assignments/index.html",
-    "title": "Assignments",
+    "objectID": "assignments/assignment4.html",
+    "href": "assignments/assignment4.html",
+    "title": "Building Features, Watching What Happens",
     "section": "",
-    "text": "Verify the Claim: White Philidelphians Living in Higher Rates of Poverty?\n\n\n\n\n\n\n\n\nSep 25, 2026\n\n\n\n\n\n\n\nWho Do We Know the Least About?\n\n\n\n\n\n\n\n\nSep 25, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Code\nlibrary(tidyverse)\nlibrary(tidycensus)\nlibrary(sf)\nlibrary(caret)\n\nSys.getenv(\"CENSUS_API_KEY\") != \"\"   # should print TRUE\n\n\n[1] TRUE\n\n\n\n\n\n\nCode\nctrl &lt;- trainControl(method = \"cv\", number = 10)\n\ncv_rmse &lt;- function(formula, data) {\n  df &lt;- if (inherits(data, \"sf\")) st_drop_geometry(data) else data\n  vars &lt;- all.vars(formula)\n  bad &lt;- vars[sapply(vars, function(v) any(is.na(df[[v]])))]\n  if (length(bad) &gt; 0) {\n    stop(\"These variables have NAs: \", paste(bad, collapse = \", \"),\n         \". Fill them or choose another variable (Rule 1: don't drop rows).\")\n  }\n  set.seed(5080)\n  fit &lt;- train(formula, data = df, method = \"lm\", trControl = ctrl)\n  fit$results$RMSE\n}\n\n\n\n\n\n\n\nCode\nmodel_log &lt;- tibble(\n  model   = character(),\n  added   = character(),\n  cv_rmse = numeric(),\n  notes   = character()\n)"
+  },
+  {
+    "objectID": "assignments/assignment4.html#what-this-assignment-is-and-isnt",
+    "href": "assignments/assignment4.html#what-this-assignment-is-and-isnt",
+    "title": "Assignment: Building Features, Watching What Happens",
+    "section": "",
+    "text": "This is not a competition. There’s no leaderboard and no target RMSE. The goal is to practice the full prediction workflow on a question you choose, and to find out what actually helps. Some features you’re sure will help won’t, and some you add on a whim will. Both are findings.\nYou’ll:\n\nChoose a tract-level outcome for Philadelphia and check whether it’s reliable enough to model (Weeks 2–3).\nFit a baseline model and cross-validate it (Week 5).\nPull data from Philadelphia’s open data portal through its API and build spatial features: counts, densities, and distances (Week 4, plus one new tool).\nTransform variables with logs, squared terms, and categories. Watch the October 9 recorded lecture before Part 5.\nKeep a model log the whole way through, and compare where your first and final models go wrong.\n\nTiming. Parts 1–4 use only what we’ve covered through Week 5. You can finish them before the October 9 lecture. Part 5 is new material; the lecture explains it, and the instructions below give you the essentials.\nType the code yourself. The worked examples show the pattern. Your job is to apply it to your outcome and your data choices.\n\n\n\n\n\n\n\n\nImportant1. Don’t drop rows\n\n\n\nEvery model is cross-validated on the same tracts with the same folds, so the rows in your model log are comparable. If a new variable has missing values, fill them (for example, 0 for a count, or the median with a note) or choose a different variable. The cv_rmse() helper below will stop and tell you if you break this rule.\n\n\nYour outcome comes from the 2019–2023 ACS. Pull open data from 2023 or earlier (2021–2023 is ideal). Using 2025 data to predict a 2023 outcome uses information from the future, which a real prediction model would never have.\n\n\n\nDon’t use any variable that’s built from your outcome or measures the same thing another way. Ask yourself: would an agency trying to predict this outcome for a tract have this variable? If the answer is “only because it’s basically the outcome,” leave it out."
+  },
+  {
+    "objectID": "assignments/assignment4.html#stay-inside-the-time-window",
+    "href": "assignments/assignment4.html#stay-inside-the-time-window",
+    "title": "Assignment: Building Features, Watching What Happens",
+    "section": "",
+    "text": "Your outcome comes from the 2019–2023 ACS. Pull open data from 2023 or earlier (2021–2023 is ideal). Using 2025 data to predict a 2023 outcome uses information from the future, which a real prediction model would never have."
+  },
+  {
+    "objectID": "assignments/assignment4.html#no-leakage",
+    "href": "assignments/assignment4.html#no-leakage",
+    "title": "Assignment: Building Features, Watching What Happens",
+    "section": "",
+    "text": "Don’t use any variable that’s built from your outcome or measures the same thing another way. Ask yourself: would an agency trying to predict this outcome for a tract have this variable? If the answer is “only because it’s basically the outcome,” leave it out."
+  },
+  {
+    "objectID": "assignments/assignment4.html#part-0-setup",
+    "href": "assignments/assignment4.html#part-0-setup",
+    "title": "Building Features, Watching What Happens",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\nlibrary(tidycensus)\nlibrary(sf)\nlibrary(caret)\n\nSys.getenv(\"CENSUS_API_KEY\") != \"\"   # should print TRUE\n\n\n[1] TRUE\n\n\n\n\n\n\nCode\nctrl &lt;- trainControl(method = \"cv\", number = 10)\n\ncv_rmse &lt;- function(formula, data) {\n  df &lt;- if (inherits(data, \"sf\")) st_drop_geometry(data) else data\n  vars &lt;- all.vars(formula)\n  bad &lt;- vars[sapply(vars, function(v) any(is.na(df[[v]])))]\n  if (length(bad) &gt; 0) {\n    stop(\"These variables have NAs: \", paste(bad, collapse = \", \"),\n         \". Fill them or choose another variable (Rule 1: don't drop rows).\")\n  }\n  set.seed(5080)\n  fit &lt;- train(formula, data = df, method = \"lm\", trControl = ctrl)\n  fit$results$RMSE\n}\n\n\n\n\n\n\n\nCode\nmodel_log &lt;- tibble(\n  model   = character(),\n  added   = character(),\n  cv_rmse = numeric(),\n  notes   = character()\n)"
+  },
+  {
+    "objectID": "assignments/assignment4.html#part-1-choose-your-outcome",
+    "href": "assignments/assignment4.html#part-1-choose-your-outcome",
+    "title": "Building Features, Watching What Happens",
+    "section": "Part 1: Choose your outcome",
+    "text": "Part 1: Choose your outcome\n\n1A: Pull your outcome and your baseline predictors\nChoose three to five ACS predictors for your baseline model. They should be things that plausibly relate to your outcome, but none of them may be built from your outcome (Rule 3).\n\n\nCode\nload_variables(2023, \"acs5\")\n\n\n# A tibble: 28,261 × 4\n   name        label                                    concept        geography\n   &lt;chr&gt;       &lt;chr&gt;                                    &lt;chr&gt;          &lt;chr&gt;    \n 1 B01001A_001 Estimate!!Total:                         Sex by Age (W… tract    \n 2 B01001A_002 Estimate!!Total:!!Male:                  Sex by Age (W… tract    \n 3 B01001A_003 Estimate!!Total:!!Male:!!Under 5 years   Sex by Age (W… tract    \n 4 B01001A_004 Estimate!!Total:!!Male:!!5 to 9 years    Sex by Age (W… tract    \n 5 B01001A_005 Estimate!!Total:!!Male:!!10 to 14 years  Sex by Age (W… tract    \n 6 B01001A_006 Estimate!!Total:!!Male:!!15 to 17 years  Sex by Age (W… tract    \n 7 B01001A_007 Estimate!!Total:!!Male:!!18 and 19 years Sex by Age (W… tract    \n 8 B01001A_008 Estimate!!Total:!!Male:!!20 to 24 years  Sex by Age (W… tract    \n 9 B01001A_009 Estimate!!Total:!!Male:!!25 to 29 years  Sex by Age (W… tract    \n10 B01001A_010 Estimate!!Total:!!Male:!!30 to 34 years  Sex by Age (W… tract    \n# ℹ 28,251 more rows\n\n\n\n\nCode\nphilly_tracts &lt;- get_acs(\n  geography = \"tract\",\n  state = \"PA\",\n  county = \"Philadelphia\",\n  variables = c(\n    total_pop = \"B01003_001\",\n    total_households = \"B08201_001\",\n    no_vehicle = \"B08201_002\",\n    median_income = \"B19013_001\",\n    median_age = \"B01002_001\",\n    total_occupied = \"B25003_001\",\n    renter_occupied = \"B25003_003\"\n  ),\n  year = 2023,\n  output = \"wide\",\n  geometry = TRUE\n) %&gt;%\n  st_transform(2272)\n\n\n\n  |                                                                            \n  |                                                                      |   0%\n  |                                                                            \n  |=                                                                     |   1%\n  |                                                                            \n  |=                                                                     |   2%\n  |                                                                            \n  |==                                                                    |   3%\n  |                                                                            \n  |===                                                                   |   4%\n  |                                                                            \n  |===                                                                   |   5%\n  |                                                                            \n  |====                                                                  |   6%\n  |                                                                            \n  |=====                                                                 |   7%\n  |                                                                            \n  |======                                                                |   8%\n  |                                                                            \n  |======                                                                |   9%\n  |                                                                            \n  |=======                                                               |  10%\n  |                                                                            \n  |========                                                              |  11%\n  |                                                                            \n  |=========                                                             |  12%\n  |                                                                            \n  |=========                                                             |  13%\n  |                                                                            \n  |==========                                                            |  14%\n  |                                                                            \n  |===========                                                           |  16%\n  |                                                                            \n  |============                                                          |  17%\n  |                                                                            \n  |============                                                          |  18%\n  |                                                                            \n  |=============                                                         |  19%\n  |                                                                            \n  |==============                                                        |  20%\n  |                                                                            \n  |==============                                                        |  21%\n  |                                                                            \n  |===============                                                       |  22%\n  |                                                                            \n  |================                                                      |  23%\n  |                                                                            \n  |================                                                      |  24%\n  |                                                                            \n  |=================                                                     |  25%\n  |                                                                            \n  |==================                                                    |  25%\n  |                                                                            \n  |===================                                                   |  26%\n  |                                                                            \n  |===================                                                   |  27%\n  |                                                                            \n  |====================                                                  |  29%\n  |                                                                            \n  |=====================                                                 |  30%\n  |                                                                            \n  |======================                                                |  31%\n  |                                                                            \n  |======================                                                |  32%\n  |                                                                            \n  |=======================                                               |  33%\n  |                                                                            \n  |========================                                              |  34%\n  |                                                                            \n  |========================                                              |  35%\n  |                                                                            \n  |=========================                                             |  36%\n  |                                                                            \n  |==========================                                            |  37%\n  |                                                                            \n  |==========================                                            |  38%\n  |                                                                            \n  |===========================                                           |  39%\n  |                                                                            \n  |============================                                          |  40%\n  |                                                                            \n  |============================                                          |  41%\n  |                                                                            \n  |=============================                                         |  42%\n  |                                                                            \n  |==============================                                        |  43%\n  |                                                                            \n  |===============================                                       |  44%\n  |                                                                            \n  |===============================                                       |  45%\n  |                                                                            \n  |================================                                      |  46%\n  |                                                                            \n  |=================================                                     |  47%\n  |                                                                            \n  |=================================                                     |  48%\n  |                                                                            \n  |==================================                                    |  49%\n  |                                                                            \n  |===================================                                   |  50%\n  |                                                                            \n  |====================================                                  |  51%\n  |                                                                            \n  |====================================                                  |  52%\n  |                                                                            \n  |=====================================                                 |  53%\n  |                                                                            \n  |======================================                                |  54%\n  |                                                                            \n  |=======================================                               |  55%\n  |                                                                            \n  |=======================================                               |  56%\n  |                                                                            \n  |========================================                              |  57%\n  |                                                                            \n  |=========================================                             |  58%\n  |                                                                            \n  |=========================================                             |  59%\n  |                                                                            \n  |==========================================                            |  60%\n  |                                                                            \n  |===========================================                           |  61%\n  |                                                                            \n  |===========================================                           |  62%\n  |                                                                            \n  |============================================                          |  63%\n  |                                                                            \n  |=============================================                         |  64%\n  |                                                                            \n  |=============================================                         |  65%\n  |                                                                            \n  |==============================================                        |  66%\n  |                                                                            \n  |===============================================                       |  67%\n  |                                                                            \n  |================================================                      |  68%\n  |                                                                            \n  |================================================                      |  69%\n  |                                                                            \n  |=================================================                     |  70%\n  |                                                                            \n  |==================================================                    |  71%\n  |                                                                            \n  |==================================================                    |  72%\n  |                                                                            \n  |===================================================                   |  73%\n  |                                                                            \n  |====================================================                  |  74%\n  |                                                                            \n  |=====================================================                 |  75%\n  |                                                                            \n  |=====================================================                 |  76%\n  |                                                                            \n  |======================================================                |  77%\n  |                                                                            \n  |=======================================================               |  78%\n  |                                                                            \n  |=======================================================               |  79%\n  |                                                                            \n  |========================================================              |  80%\n  |                                                                            \n  |=========================================================             |  81%\n  |                                                                            \n  |==========================================================            |  82%\n  |                                                                            \n  |==========================================================            |  83%\n  |                                                                            \n  |===========================================================           |  84%\n  |                                                                            \n  |============================================================          |  85%\n  |                                                                            \n  |============================================================          |  86%\n  |                                                                            \n  |=============================================================         |  87%\n  |                                                                            \n  |==============================================================        |  88%\n  |                                                                            \n  |==============================================================        |  89%\n  |                                                                            \n  |===============================================================       |  90%\n  |                                                                            \n  |================================================================      |  91%\n  |                                                                            \n  |================================================================      |  92%\n  |                                                                            \n  |=================================================================     |  93%\n  |                                                                            \n  |==================================================================    |  94%\n  |                                                                            \n  |===================================================================   |  95%\n  |                                                                            \n  |===================================================================   |  96%\n  |                                                                            \n  |====================================================================  |  97%\n  |                                                                            \n  |===================================================================== |  98%\n  |                                                                            \n  |===================================================================== |  99%\n  |                                                                            \n  |======================================================================| 100%\n\n\n\n\nCode\nphilly_tracts &lt;- philly_tracts %&gt;%\n  mutate(\n    # build your outcome, e.g. a percentage:\n    y = no_vehicleE / total_householdsE * 100,\n    # and its reliability. For a percentage, use tidycensus::moe_prop();\n    # for a median or count, use the E and M columns directly.\n    y_moe = tidycensus::moe_prop(\n      no_vehicleE,\n      total_householdsE,\n      no_vehicleM,\n      total_householdsM\n    ),\n    y_cv  = (y_moe / 1.645) / y * 100,\n    # your predictors:\n    renter_pct = renter_occupiedE/total_occupiedE * 100\n    )\n\n\n\n\n1B: Is it reliable enough to model?\nBefore you commit, check three things.\n\n\nCode\n# How many tracts have no value for your outcome?\nsum(is.na(philly_tracts$y))\n\n\n[1] 20\n\n\nCode\n# How reliable is it?\nsummary(philly_tracts$y_cv)\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs \n0.03572 0.17204 0.23410     Inf 0.31959     Inf      20 \n\n\nCode\nphilly_tracts %&gt;%\n  mutate(reliability = case_when(\n    y_cv &lt; 12  ~ \"High\",\n    y_cv &lt;= 40 ~ \"Moderate\",\n    TRUE       ~ \"Low\"\n  )) %&gt;%\n  st_drop_geometry() %&gt;%\n  count(reliability)\n\n\n  reliability   n\n1        High 387\n2         Low  21\n\n\nCode\n# What does the distribution look like?\nggplot(philly_tracts, aes(x = y)) +\n  geom_histogram(bins = 30) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nCode\nsum(is.na(philly_tracts$y))\n\n\n[1] 20\n\n\nCode\nsummary(philly_tracts$y_cv)\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs \n0.03572 0.17204 0.23410     Inf 0.31959     Inf      20 \n\n\nIf more than about a third of tracts have low reliability, consider a different outcome, or one built from larger counts. Write your reasoning either way.\nAnswer: What is your outcome, why would an agency want to predict it, and how reliable is it?\nThe outcome shows the percentage of households in each Philadelphia census tract that have no vehicle. An agency could use this measure to find areas where households may have greater transportation needs and may benefit from transportation services. The outcome is highly reliable because 387 of 388 tracts have high reliability, while only 1 tract has low reliability, which is far below one-third of the tracts.\n\n\n1C: Decide which tracts to model\nFilter once, here, and never again. Every later step uses tracts.\n\n\nCode\ntracts &lt;- philly_tracts %&gt;%\n  filter(total_householdsE &gt; 0,\n         !is.na(y)\n         # add !is.na() for each baseline predictor like in the in-class lab\n         )\n\nnrow(philly_tracts)\n\n\n[1] 408\n\n\nCode\nnrow(tracts)\n\n\n[1] 388\n\n\nAnswer: How many tracts did you lose, and what kinds of places are they?"
+  },
+  {
+    "objectID": "assignments/assignment4.html#i-lost-20-tracts.-these-are-tracts-with-zero-reported-households-so-the-percentage-of-households-without-a-vehicle-cannot-be-calculated-for-them-because-there-is-no-household-denominator.",
+    "href": "assignments/assignment4.html#i-lost-20-tracts.-these-are-tracts-with-zero-reported-households-so-the-percentage-of-households-without-a-vehicle-cannot-be-calculated-for-them-because-there-is-no-household-denominator.",
+    "title": "Building Features, Watching What Happens",
+    "section": "I lost 20 tracts. These are tracts with zero reported households, so the percentage of households without a vehicle cannot be calculated for them because there is no household denominator.",
+    "text": "I lost 20 tracts. These are tracts with zero reported households, so the percentage of households without a vehicle cannot be calculated for them because there is no household denominator."
+  },
+  {
+    "objectID": "assignments/assignment4.html#part-2-baseline-model",
+    "href": "assignments/assignment4.html#part-2-baseline-model",
+    "title": "Building Features, Watching What Happens",
+    "section": "Part 2: Baseline model",
+    "text": "Part 2: Baseline model\n\n2A: Look first\nPlot your outcome against each predictor before modeling (the Week 3 habit).\n\n\nCode\nincome_median &lt;- median(tracts$median_incomeE, na.rm = TRUE)\n\ntracts &lt;- tracts %&gt;% # removing 7 empty variables\n  mutate(\n    median_incomeE = if_else(\n      is.na(median_incomeE),\n      income_median,\n      median_incomeE\n    )\n  )\n\n\n\n\nCode\n# one scatterplot per predictor, e.g.:\n ggplot(tracts, aes(x = median_incomeE, y = y)) + geom_point(alpha = 0.5) +\n   geom_smooth(method = \"lm\", se = FALSE) + theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\nCode\n# one scatterplot per predictor, e.g.:\n ggplot(tracts, aes(x = median_ageE, y = y)) + geom_point(alpha = 0.5) +\n   geom_smooth(method = \"lm\", se = FALSE) + theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\nCode\n# one scatterplot per predictor, e.g.:\n ggplot(tracts, aes(x = renter_pct, y = y)) + geom_point(alpha = 0.5) +\n   geom_smooth(method = \"lm\", se = FALSE) + theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n2B: Fit and log\n\n\nCode\nf1 &lt;- y ~ median_incomeE + median_ageE + renter_pct\n\nm1 &lt;- lm(f1, data = tracts)\nsummary(m1)\n\n\n\nCall:\nlm(formula = f1, data = tracts)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-35.916  -7.747  -1.576   8.268  43.632 \n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     2.051e+01  4.492e+00   4.567 6.69e-06 ***\nmedian_incomeE -1.138e-04  1.985e-05  -5.732 2.01e-08 ***\nmedian_ageE    -1.382e-01  8.878e-02  -1.557     0.12    \nrenter_pct      4.241e-01  3.424e-02  12.386  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 12.41 on 384 degrees of freedom\nMultiple R-squared:  0.4289,    Adjusted R-squared:  0.4244 \nF-statistic: 96.11 on 3 and 384 DF,  p-value: &lt; 2.2e-16\n\n\nCode\nmodel_log &lt;- model_log %&gt;%\n  add_row(model = \"m1\", added = \"ACS baseline\",\n          cv_rmse = cv_rmse(f1, tracts),\n          notes = \"Baseline model with income, age, and renter percentage\")\n\nmodel_log\n\n\n# A tibble: 1 × 4\n  model added        cv_rmse notes                                              \n  &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;                                              \n1 m1    ACS baseline    12.4 Baseline model with income, age, and renter percen…\n\n\nOn tracts it hasn’t seen, the baseline model misses by about 12.44 percentage points, based on the cross-validation RMSE.\n\n\n2C: Where is the baseline wrong?\n\n\nCode\ntracts &lt;- tracts %&gt;% mutate(resid_m1 = residuals(m1))\n\nggplot(tracts) +\n  geom_sf(aes(fill = resid_m1), color = NA) +\n  scale_fill_gradient2(low = \"#2166ac\", mid = \"grey95\", high = \"#b2182b\", midpoint = 0) +\n  theme_void() +\n  labs(title = \"Baseline model: where it's wrong\",\n       subtitle = \"Red = actual higher than predicted\",\n       fill = \"Residual\")\n\n\n\n\n\n\n\n\n\nAnswer: Where do the residuals cluster? What might those places have in common that your model doesn’t know about?\nThe residual map shows spatial clustering, with positive residuals concentrated in parts of central and southern Philadelphia and negative residuals appearing in portions of northwestern and northeastern Philadelphia. Positive residuals indicate that the actual percentage of households without vehicles is higher than the model predicts, while negative residuals indicate that it is lower than predicted. Because the residuals are spatially patterned, median income, median age, and renter percentage do not fully explain geographic variation in vehicle ownership. The remaining patterns may reflect differences in public transportation access, neighborhood density, walk-ability, and proximity. These patterns suggest that adding transportation-accessibility or built-environment data could improve the model."
+  },
+  {
+    "objectID": "assignments/assignment4.html#part-3-getting-data-from-philadelphias-open-data-portal",
+    "href": "assignments/assignment4.html#part-3-getting-data-from-philadelphias-open-data-portal",
+    "title": "Building Features, Watching What Happens",
+    "section": "Part 3: Getting data from Philadelphia’s open data portal",
+    "text": "Part 3: Getting data from Philadelphia’s open data portal\n\n\nCode\ncarto_get &lt;- function(sql) {\n  url &lt;- paste0(\"https://phl.carto.com/api/v2/sql?format=GeoJSON&q=\", URLencode(sql))\n  st_read(url, quiet = TRUE)\n}\n\n\n\nFinding a table name\n\n\nCode\n# What kinds of crime are in the incidents table in 2023?\nurl &lt;- paste0(\"https://phl.carto.com/api/v2/sql?format=csv&q=\",\n              URLencode(\"SELECT text_general_code, COUNT(*) AS n\n                         FROM incidents_part1_part2\n                         WHERE dispatch_date &gt;= '2023-01-01' AND dispatch_date &lt; '2024-01-01'\n                         GROUP BY text_general_code ORDER BY n DESC\"))\nread_csv(url)\n\n\n# A tibble: 32 × 2\n   text_general_code                 n\n   &lt;chr&gt;                         &lt;dbl&gt;\n 1 Thefts                        37054\n 2 Other Assaults                25986\n 3 Motor Vehicle Theft           22478\n 4 Vandalism/Criminal Mischief   17346\n 5 All Other Offenses            13334\n 6 Theft from Vehicle            13002\n 7 Fraud                          7661\n 8 Aggravated Assault No Firearm  5134\n 9 Burglary Residential           3800\n10 Aggravated Assault Firearm     3320\n# ℹ 22 more rows\n\n\n\n\nWorked example: residential burglaries in 2023\n\n\nCode\nburglary &lt;- carto_get(\n  \"SELECT the_geom, text_general_code, dispatch_date\n   FROM incidents_part1_part2\n   WHERE dispatch_date &gt;= '2023-01-01' AND dispatch_date &lt; '2024-01-01'\n     AND text_general_code = 'Burglary Residential'\"\n) %&gt;%\n  st_transform(st_crs(tracts))    # Carto returns EPSG 4326; translate immediately\n\nnrow(burglary)\n\n\n[1] 3800\n\n\n\n\nOther layers to try\n\n\nYour turn\n\n\nCode\n# Layer 1: SEPTA bus stops, Fall 2023\nbus_stops &lt;- st_read(\n  \"https://hub.arcgis.com/api/v3/datasets/4ad3e7e4f9c34f619b467bc2d979f08b_0/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1\",\n  quiet = TRUE\n) %&gt;%\n  st_transform(st_crs(tracts))\n\n# Layer 2: SEPTA trolley stops, Fall 2023\ntrolley_stops &lt;- st_read(\n  \"https://hub.arcgis.com/api/v3/datasets/627fb25b9af14d2ab45fd3c8d65564b1_0/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1\",\n  quiet = TRUE\n) %&gt;%\n  st_transform(st_crs(tracts))\n\nnrow(bus_stops); nrow(trolley_stops)\n\n\n[1] 18063\n\n\n[1] 529\n\n\n\n\nCode\nbus_stops &lt;- bus_stops %&gt;% filter(!st_is_empty(geometry))\n\n\nAnswer: Why these layers? What do you expect them to capture that the ACS variables don’t?\nI chose bus stops and trolley stops because access to public transportation may help explain why some Philadelphia census tracts have higher or lower percentages of households without vehicles than my baseline model predicts. My baseline model includes median income, median age, and renter percentage, but these variables do not directly measure transportation availability. Bus and trolley stop locations provide additional information about transit access that the ACS variables do not capture."
+  },
+  {
+    "objectID": "assignments/assignment4.html#part-4-building-spatial-features",
+    "href": "assignments/assignment4.html#part-4-building-spatial-features",
+    "title": "Building Features, Watching What Happens",
+    "section": "Part 4: Building spatial features",
+    "text": "Part 4: Building spatial features\nEvery feature below reuses a Week 4 tool. The worked examples use burglaries and Indego stations; you build the same types from your own layers.\n\n4A: Counting\nHow many burglaries fall in each tract?\n\n\nCode\ntracts &lt;- tracts %&gt;%\n  mutate(n_burglary = lengths(st_intersects(., burglary)))\n\nsummary(tracts$n_burglary)\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  0.000   4.000   7.000   9.479  13.000  48.000 \n\n\nA tract with no burglaries gets 0, not NA, so Rule 1 is safe.\n\n\n4B: Density: don’t skip this\nRaw counts mostly measure tract size. A big tract has more of everything. Normalize by area, by population, or by housing units, depending on what makes sense for the thing you’re counting.\n\n\nCode\ntracts &lt;- tracts %&gt;%\n  mutate(\n    area_sqmi         = as.numeric(st_area(.)) / 27878400,  \n    burglary_per_sqmi = n_burglary / area_sqmi,\n    burglary_per_1k   = n_burglary / total_popE * 1000\n  )\n\n\n\n\n\n\n\n\nNotePer capita in low-population tracts\n\n\n\nIf a tract has 40 residents and 3 burglaries, its rate is 75 per 1,000, which is a huge number built on tiny counts. Look at the tracts with the highest per-capita rates before you trust them. This is the Week 3 lesson about small denominators again.\n\n\n\n\n4C: Measuring distance to the nearest thing\nHow far is each tract from its nearest Indego station? Use the Week 4 pattern: find the nearest feature, then measure to it element by element.\n\n\nCode\nstations &lt;- st_read(\"https://www.rideindego.com/stations/json/\", quiet = TRUE) %&gt;%\n  st_transform(st_crs(tracts))\n\ntract_pts &lt;- st_point_on_surface(tracts)   # always inside the tract, unlike a centroid\n\nnearest_idx &lt;- st_nearest_feature(tract_pts, stations)\n\ntracts &lt;- tracts %&gt;%\n  mutate(dist_station_mi = as.numeric(\n    st_distance(tract_pts, stations[nearest_idx, ], by_element = TRUE)) / 5280)\n\n\n\n\nCode\ncity_hall &lt;- st_sfc(st_point(c(-75.1636, 39.9526)), crs = 4326) %&gt;%\n  st_transform(st_crs(tracts))\n\ntracts &lt;- tracts %&gt;%\n  mutate(dist_ch_mi = as.numeric(st_distance(tract_pts, city_hall)) / 5280)\n\n\n\n\n4D: Measuring distance to one place\nSometimes the “thing” is a single location, such as City Hall as a stand-in for the center of the regional economy.\n\n\nCode\n# Feature 1: bus-stop count\ntracts &lt;- tracts %&gt;%\n  mutate(n_bus_stops = lengths(st_intersects(., bus_stops)))\n\nf2 &lt;- y ~ median_incomeE + median_ageE + renter_pct + n_bus_stops\n\nmodel_log &lt;- model_log %&gt;%\n  add_row(model = \"m2\", added = \"Bus stop count\",\n          cv_rmse = cv_rmse(f2, tracts),\n          notes = \"Tests whether the number of bus stops helps explain vehicle ownership\")\n\n# Feature 2: bus-stop density per square mile\ntracts &lt;- tracts %&gt;%\n  mutate(\n    area_sqmi = as.numeric(st_area(.)) / 27878400,\n    bus_stops_per_sqmi = n_bus_stops / area_sqmi\n  )\n\nf3 &lt;- y ~ median_incomeE + median_ageE + renter_pct + bus_stops_per_sqmi\n\nm3 &lt;- lm(f3, data = tracts)\n\nmodel_log &lt;- model_log %&gt;%\n  add_row(model = \"m3\", added = \"Bus-stop density\",\n          cv_rmse = cv_rmse(f3, tracts),\n          notes = \"Adjusts for tract area to measure transit-stop density\")\n\n# Feature 3: distance to the nearest bus stop\ntract_pts &lt;- st_point_on_surface(tracts)\n\nnearest_bus_idx &lt;- st_nearest_feature(tract_pts, bus_stops)\n\ntracts &lt;- tracts %&gt;%\n  mutate(\n    dist_bus_stop_mi = as.numeric(\n      st_distance(tract_pts, bus_stops[nearest_bus_idx, ], by_element = TRUE)\n    ) / 5280\n  )\n\nf4 &lt;- y ~ median_incomeE + median_ageE + renter_pct + dist_bus_stop_mi\n\nm4 &lt;- lm(f4, data = tracts)\n\nmodel_log &lt;- model_log %&gt;%\n  add_row(model = \"m4\", added = \"Distance to nearest bus stop\",\n          cv_rmse = cv_rmse(f4, tracts),\n          notes = \"Tests whether proximity to transit explains vehicle ownership\")\n\nmodel_log\n\n\n# A tibble: 4 × 4\n  model added                        cv_rmse notes                              \n  &lt;chr&gt; &lt;chr&gt;                          &lt;dbl&gt; &lt;chr&gt;                              \n1 m1    ACS baseline                    12.4 Baseline model with income, age, a…\n2 m2    Bus stop count                  12.5 Tests whether the number of bus st…\n3 m3    Bus-stop density                11.0 Adjusts for tract area to measure …\n4 m4    Distance to nearest bus stop    12.0 Tests whether proximity to transit…\n\n\nAnswer: Which spatial feature helped most? Did any feature you expected to help do nothing, or make CV RMSE worse? Why might that be?\nDistance to the nearest bus stop helped the most, reducing the cross-validation RMSE from 12.44 in the baseline model to 10.98. This is an improvement of approximately 11.8%. Bus-stop density also improved the model, reducing RMSE to 12.13, while the raw bus-stop count made only a small improvement, with an RMSE of 12.35. These results suggest that proximity to public transportation may be more informative for predicting vehicle ownership than simply counting stops or measuring their density. The count may be less useful because it does not account for tract size, while density adjusts for area but does not directly measure how close residents are to transit. However, proximity to a bus stop does not necessarily capture the level of service."
+  },
+  {
+    "objectID": "assignments/assignment4.html#part-5-transforming-features",
+    "href": "assignments/assignment4.html#part-5-transforming-features",
+    "title": "Building Features, Watching What Happens",
+    "section": "Part 5: Transforming features",
+    "text": "Part 5: Transforming features\n\n5A: Logs, for skewed predictors\nMany urban variables are skewed: a few tracts have huge values, and most have small ones. Income, density, and counts are typical. A log compresses the long tail, so a model can use the difference between 1 and 10 as well as the difference between 100 and 1,000.\n\n\nCode\nggplot(tracts, aes(x = burglary_per_sqmi)) + geom_histogram(bins = 30) + theme_minimal()\n\n\n\n\n\n\n\n\n\nCode\nggplot(tracts, aes(x = log1p(burglary_per_sqmi))) + geom_histogram(bins = 30) + theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n5B: Squared terms, for curves\nIf your scatterplot bends (rising and then flattening, or falling and then rising), a squared term lets the line curve. Write it with I(), which tells R to do the arithmetic rather than read ^ as formula syntax.\n\n\nCode\nm_sq &lt;- lm(y ~ dist_ch_mi + I(dist_ch_mi^2), data = tracts)\nsummary(m_sq)\n\n\n\nCall:\nlm(formula = y ~ dist_ch_mi + I(dist_ch_mi^2), data = tracts)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-27.969  -8.586  -0.840   7.851  43.302 \n\nCoefficients:\n                Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     45.74304    1.78017  25.696  &lt; 2e-16 ***\ndist_ch_mi      -4.08558    0.64524  -6.332 6.75e-10 ***\nI(dist_ch_mi^2)  0.08658    0.04850   1.785    0.075 .  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 12.91 on 385 degrees of freedom\nMultiple R-squared:  0.3795,    Adjusted R-squared:  0.3762 \nF-statistic: 117.7 on 2 and 385 DF,  p-value: &lt; 2.2e-16\n\n\nReading the coefficient: you can’t read either coefficient alone anymore. The effect of X depends on where you are along X. A positive linear term with a negative squared term means Y rises with X and then levels off or turns down. Plot the fitted curve to see it:\n\n\nCode\nggplot(tracts, aes(x = dist_ch_mi, y = y)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"lm\", formula = y ~ x + I(x^2), se = FALSE, color = \"red\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n5C: Categorical variables\nSometimes a number works better as groups, either because the relationship isn’t smooth or because the categories are meaningful. You can make categories from any variable with case_when() or cut(), and then make sure R treats them as a factor.\n\n\nCode\ntracts &lt;- tracts %&gt;%\n  mutate(\n    ring = case_when(\n      dist_ch_mi &lt; 2 ~ \"Core\",\n      dist_ch_mi &lt; 5 ~ \"Inner\",\n      TRUE           ~ \"Outer\"\n    ),\n    ring = factor(ring, levels = c(\"Core\", \"Inner\", \"Outer\"))\n  )\n\ntracts %&gt;% st_drop_geometry() %&gt;% count(ring)\n\n\n   ring   n\n1  Core  80\n2 Inner 136\n3 Outer 172\n\n\nCode\nm_cat &lt;- lm(y ~ ring, data = tracts)\nsummary(m_cat)\n\n\n\nCall:\nlm(formula = y ~ ring, data = tracts)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-33.837 -10.429  -1.548   8.576  42.791 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   38.635      1.523  25.368   &lt;2e-16 ***\nringInner     -3.710      1.919  -1.933   0.0539 .  \nringOuter    -20.431      1.843 -11.083   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 13.62 on 385 degrees of freedom\nMultiple R-squared:  0.3097,    Adjusted R-squared:  0.3061 \nF-statistic: 86.35 on 2 and 385 DF,  p-value: &lt; 2.2e-16\n\n\nReading the coefficients: R turns a factor with k categories into k − 1 dummy variables. The category left out is the reference level (here, “Core,” the first level). Each coefficient is the difference from the reference: ringOuter is how much higher or lower predicted Y is in outer tracts compared to core tracts, holding everything else in the model constant. To change the reference, use relevel(ring, ref = \"Outer\").\n\n\n5D: Your turn\nTry at least one of each: a log, a squared term, and a categorical variable. Choose which variables to transform based on your plots, not at random. Log each model.\n\n\nCode\n# Log \nf_log &lt;- y ~ log1p(median_incomeE) + median_ageE +\n  renter_pct + dist_bus_stop_mi\n\nmodel_log &lt;- model_log %&gt;%\n  add_row(\n    model = \"m5\",\n    added = \"Log of median income\",\n    cv_rmse = cv_rmse(f_log, tracts),\n    notes = \"Tests whether a log transformation of income improves prediction\"\n  )\n\n\n# Squared term \nf_sq &lt;- y ~ median_incomeE + median_ageE + renter_pct +\n  dist_bus_stop_mi + I(dist_bus_stop_mi^2)\n\nmodel_log &lt;- model_log %&gt;%\n  add_row(\n    model = \"m6\",\n    added = \"Squared bus-stop distance\",\n    cv_rmse = cv_rmse(f_sq, tracts),\n    notes = \"Tests for a curved relationship between transit distance and vehicle ownership\"\n  )\n\n\n# Categorical\ntracts &lt;- tracts %&gt;%\n  mutate(\n    ring = case_when(\n      dist_ch_mi &lt; 2 ~ \"Core\",\n      dist_ch_mi &lt; 5 ~ \"Inner\",\n      TRUE ~ \"Outer\"\n    ),\n    ring = factor(ring, levels = c(\"Core\", \"Inner\", \"Outer\"))\n  )\n\ntracts %&gt;% st_drop_geometry() %&gt;% count(ring)\n\n\n   ring   n\n1  Core  80\n2 Inner 136\n3 Outer 172\n\n\nCode\nf_cat &lt;- y ~ median_incomeE + median_ageE + renter_pct +\n  ring + dist_bus_stop_mi\n\nmodel_log &lt;- model_log %&gt;%\n  add_row(\n    model = \"m7\",\n    added = \"Categorical City Hall distance\",\n    cv_rmse = cv_rmse(f_cat, tracts),\n    notes = \"Tests whether core, inner, and outer areas differ in vehicle ownership\"\n  )\n\nmodel_log\n\n\n# A tibble: 7 × 4\n  model added                          cv_rmse notes                            \n  &lt;chr&gt; &lt;chr&gt;                            &lt;dbl&gt; &lt;chr&gt;                            \n1 m1    ACS baseline                      12.4 Baseline model with income, age,…\n2 m2    Bus stop count                    12.5 Tests whether the number of bus …\n3 m3    Bus-stop density                  11.0 Adjusts for tract area to measur…\n4 m4    Distance to nearest bus stop      12.0 Tests whether proximity to trans…\n5 m5    Log of median income              11.7 Tests whether a log transformati…\n6 m6    Squared bus-stop distance         11.8 Tests for a curved relationship …\n7 m7    Categorical City Hall distance    10.4 Tests whether core, inner, and o…\n\n\nAnswer: Which transformation helped most? For your categorical variable, write one sentence reading one of its coefficients correctly, naming the reference level.\nThe categorical City Hall distance model performed best, with a cross-validation RMSE of 10.32, compared with 12.44 for the baseline model. This represents a 17.1% reduction in prediction error. The log-transformed median income model also improved predictive performance, with an RMSE of 10.76. The squared bus-stop distance model had an RMSE of 10.90, which was slightly worse than the log-income model but still better than the baseline. These results show that accounting for spatial differences between central, inner, and outer parts of Philadelphia helps explain variation in the percentage of households without vehicles."
+  },
+  {
+    "objectID": "assignments/assignment4.html#part-6-your-final-model",
+    "href": "assignments/assignment4.html#part-6-your-final-model",
+    "title": "Building Features, Watching What Happens",
+    "section": "Part 6: Your final model",
+    "text": "Part 6: Your final model\nCombine the features and transformations that earned their place, judged by CV RMSE, not p-values.\n\n\nCode\nf_final &lt;- y ~ log1p(median_incomeE) +\n  median_ageE + renter_pct +\n  ring + dist_bus_stop_mi\n\nm_final &lt;- lm(f_final, data = tracts)\nsummary(m_final)\n\n\n\nCall:\nlm(formula = f_final, data = tracts)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-25.992  -6.574  -0.644   5.920  32.170 \n\nCoefficients:\n                       Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)           196.14251   16.13308  12.158  &lt; 2e-16 ***\nlog1p(median_incomeE) -15.18059    1.33284 -11.390  &lt; 2e-16 ***\nmedian_ageE             0.03948    0.07353   0.537    0.592    \nrenter_pct              0.22917    0.03145   7.287 1.84e-12 ***\nringInner             -10.80449    1.74866  -6.179 1.66e-09 ***\nringOuter             -19.87784    1.80576 -11.008  &lt; 2e-16 ***\ndist_bus_stop_mi       -8.42589    6.23703  -1.351    0.178    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 10.08 on 381 degrees of freedom\nMultiple R-squared:  0.626, Adjusted R-squared:  0.6201 \nF-statistic: 106.3 on 6 and 381 DF,  p-value: &lt; 2.2e-16\n\n\nCode\nmodel_log &lt;- model_log %&gt;%\n  add_row(model = \"final\", added = \"Log income + City Hall distance categories + bus-stop distance\",\n          cv_rmse = cv_rmse(f_final, tracts),\n          notes = \"Combines the best-performing transformations and spatial predictors\")\n#getting rid of the duplicated again?\nmodel_log &lt;- model_log %&gt;%\n  distinct(model, .keep_all = TRUE)\n\n\nmodel_log\n\n\n# A tibble: 8 × 4\n  model added                                                      cv_rmse notes\n  &lt;chr&gt; &lt;chr&gt;                                                        &lt;dbl&gt; &lt;chr&gt;\n1 m1    ACS baseline                                                  12.4 Base…\n2 m2    Bus stop count                                                12.5 Test…\n3 m3    Bus-stop density                                              11.0 Adju…\n4 m4    Distance to nearest bus stop                                  12.0 Test…\n5 m5    Log of median income                                          11.7 Test…\n6 m6    Squared bus-stop distance                                     11.8 Test…\n7 m7    Categorical City Hall distance                                10.4 Test…\n8 final Log income + City Hall distance categories + bus-stop dis…    10.1 Comb…\n\n\n\nWhere is the final model wrong?\n\n\nCode\ntracts &lt;- tracts %&gt;% mutate(resid_final = residuals(m_final))\n\nggplot(tracts) +\n  geom_sf(aes(fill = resid_final), color = NA) +\n  scale_fill_gradient2(low = \"#2166ac\", mid = \"grey95\", high = \"#b2182b\", midpoint = 0) +\n  theme_void() +\n  labs(title = \"Final model: where it's wrong\",\n       subtitle = \"Red = actual higher than predicted\",\n       fill = \"Residual\")\n\n\n\n\n\n\n\n\n\nPut your two residual maps side by side, or put them next to each other in the rendered document. Did the clusters from Part 2C shrink? Where did they stay?\n\n\nCode\nlibrary(patchwork)\n\nlims &lt;- range(c(tracts$resid_m1, tracts$resid_final))\n\nmap_fun &lt;- function(var, ttl) {\n  ggplot(tracts) +\n    geom_sf(aes(fill = {{ var }}), color = NA) +\n    scale_fill_gradient2(low = \"#2166ac\", mid = \"grey95\", high = \"#b2182b\",\n                         midpoint = 0, limits = lims) +\n    theme_void() +\n    labs(title = ttl, fill = \"Residual\")\n}\n\n(map_fun(resid_m1, \"Baseline model\") | map_fun(resid_final, \"Final model\")) +\n  plot_layout(guides = \"collect\") +\n  plot_annotation(subtitle = \"Red = actual higher than predicted\")\n\n\n\n\n\n\n\n\n\n\n\nAre the biggest misses in the least reliable tracts?\n\n\nCode\nggplot(tracts, aes(x = y_cv, y = abs(resid_final))) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(se = FALSE) +\n  labs(x = \"CV of your outcome estimate (%)\", y = \"Size of the miss\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "assignments/assignment4.html#part-7-reflection-about-300-words",
+    "href": "assignments/assignment4.html#part-7-reflection-about-300-words",
+    "title": "Assignment: Building Features, Watching What Happens",
+    "section": "Part 7: Reflection (about 300 words)",
+    "text": "Part 7: Reflection (about 300 words)\nAnswer in prose, drawing on your model log (incorporate our words of the day for bonus points. just kidding):\n\nWhat helped, and what didn’t? Name the feature that lowered CV RMSE the most and the one that disappointed you most. Offer a reason for each.\nRead one coefficient twice. Choose a variable in your final model. Give its β̂ reading and its ŷ reading in one sentence each.\nWhat’s still missing? Look at your final residual map. Name one thing about those places you’d want to measure next, and where you might get the data.\nHow much of the remaining error might be uncertainty or statistical noise? Use your last plot.\nDistance to the nearest stop helped most. It took CV RMSE from 12.44 to 10.98, a drop of about 1.5 points, and the full final model reached 10.03. Distance measures how close residents are to transit, which is what matters when a household decides whether to own a car. The raw stop count was the least helpful (12.44 to 12.35). A count mostly reflects tract size, and bigger tracts simply contain more stops, so it said little about access. The squared distance term also added little (10.98 to 10.90), so the relationship is close to linear. The City Hall distance categories (10.32) and logged income (10.76) each helped a moderate amount, and the final model combined them.\nFor dist_bus_stop_mi, β̂ = [value]: holding income, age, renter share, and the City Hall ring constant, tracts one mile farther from the nearest stop have a [value] percentage-point [higher/lower] share of households without a vehicle. For ŷ, a tract with otherwise typical characteristics and a stop 0.1 miles away is predicted to have [ŷ]% of households with no vehicle, versus [ŷ]% at 0.5 miles.\nRed residuals remain in North Philadelphia, parts of West Philadelphia, and the Center City/South Philadelphia area. Actual vehicle-free rates there are higher than predicted. My model knows where stops are but not how good the service is. I’d measure service frequency and ridership, plus off-street parking availability in dense row house neighborhoods.\nVery little, judging by the last plot. The largest misses (20–30 points) occur at low outcome CVs, around 0.1–0.3%, where the ACS estimate is most precise. The smooth line doesn’t rise as CV increases. Survey uncertainty therefore doesn’t explain most of the error, and the remaining misses come mainly from what the model leaves out, like the service quality and parking in question 3. There are only a few high-CV tracts."
+  },
+  {
+    "objectID": "assignments/assignment4.html#submitting",
+    "href": "assignments/assignment4.html#submitting",
+    "title": "Assignment: Building Features, Watching What Happens",
+    "section": "Submitting",
+    "text": "Submitting\nRender this document to HTML and submit the link on Canvas by Friday, October 16. I’ll miss you all terribly while I’m away. Please send letters or correspondences to my office mailbox."
   },
   {
     "objectID": "assignments/Assignment3.html",
@@ -180,6 +264,34 @@
     "title": "Verify the Claim: White Philidelphians Living in Higher Rates of Poverty?",
     "section": "",
     "text": "New five-year estimates from the U.S. Census Bureau’s American Community Survey show that Philadelphia continues to experience substantial geographic inequality in poverty. The 2013-2017 estimates reveal large differences in poverty rates across census tracts, consistent with the city’s persistent economic divide. In comparison with the 2006-2010 estimates provide less evidence that poverty broadly changed across the city. After accounting for the margins of error, most census tracts show no statistically detectable change in their poverty rates. The results suggest that Philadelphia remained highly unequal, but they do not support the conclusion that poverty increased or decreased substantially throughout the city. Changes in individual tracts should be interpreted cautiously because ACS estimates are based on samples. (Adjusted from the article)"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I studied Geography at UC Berkeley with a minor in Geographic Information Science and Technology, where I became interest in understanding how environmental and human systems interact. Through coursework and research, I gained experience with GIS, remote sensing, and spatial data. I was drawn to urban spatial analytics because I wanted to apply these geospatial skills to understand cities and issues in environmental inequality and access to resources. Through MUSA, I hope to strengthen my skills in data science, programming, and quantitative analysis and ultimately work at the intersection of GIS, data analysis, and urban or environmental planning."
+  },
+  {
+    "objectID": "about.html#background",
+    "href": "about.html#background",
+    "title": "About Me",
+    "section": "",
+    "text": "I studied Geography at UC Berkeley with a minor in Geographic Information Science and Technology, where I became interest in understanding how environmental and human systems interact. Through coursework and research, I gained experience with GIS, remote sensing, and spatial data. I was drawn to urban spatial analytics because I wanted to apply these geospatial skills to understand cities and issues in environmental inequality and access to resources. Through MUSA, I hope to strengthen my skills in data science, programming, and quantitative analysis and ultimately work at the intersection of GIS, data analysis, and urban or environmental planning."
+  },
+  {
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "About Me",
+    "section": "Skills",
+    "text": "Skills\n\n\nLanguages & Tools: R, Quarto, Git\nSpatial: QGIS, ARCGIS, Google Earth Engine\nData: US Census / ACS via tidycensus"
+  },
+  {
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About Me",
+    "section": "Contact",
+    "text": "Contact\n\n\nEmail: sophia.jean.meyers@gmail.com\nGitHub: @SophiaMeyers"
   },
   {
     "objectID": "assignments/assignment2 .html",
@@ -245,32 +357,11 @@
     "text": "What this means for policy\nThe communities we know the least about in this analysis are the smaller counties in Oregon, which have the largest margins of error relative to their median gross rent estimates. Gilliam County has the highest margin of error at 15.31%, followed by Sherman County at 14.07% and Wheeler County at 13.43%. Morrow County and Hood River County also have relatively high margins of error, at 11.98% and 10.72%, respectively. These results suggest that the reliability of ACS estimates is related to the size of the communities being measured. The ACS does not collect information from every household. It uses a sample to estimate characteristics for larger populations. There are fewer households in smaller counties to be included in the sample, meaning that individual responses have a greater effect on the overall estimate. This causes larger margins of error for the reported median gross rent. The high-confidence counties in my analysis have an average population of about 197,743, compared with only 18,790 for moderate-confidence counties and 2,002 for the one low-confidence county. This uncertainty could create problems if a state agency used these estimates to allocate housing-related funding while treating every county’s number as equally reliable. Smaller counties could receive too much or too little funding based on an estimate that is relatively uncertain. This could particularly hurt rural communities, such as in Gillian County, where limited resources and smaller populations already make it harder to accurately identify housing needs."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments",
     "section": "",
-    "text": "I studied Geography at UC Berkeley with a minor in Geographic Information Science and Technology, where I became interest in understanding how environmental and human systems interact. Through coursework and research, I gained experience with GIS, remote sensing, and spatial data. I was drawn to urban spatial analytics because I wanted to apply these geospatial skills to understand cities and issues in environmental inequality and access to resources. Through MUSA, I hope to strengthen my skills in data science, programming, and quantitative analysis and ultimately work at the intersection of GIS, data analysis, and urban or environmental planning."
-  },
-  {
-    "objectID": "about.html#background",
-    "href": "about.html#background",
-    "title": "About Me",
-    "section": "",
-    "text": "I studied Geography at UC Berkeley with a minor in Geographic Information Science and Technology, where I became interest in understanding how environmental and human systems interact. Through coursework and research, I gained experience with GIS, remote sensing, and spatial data. I was drawn to urban spatial analytics because I wanted to apply these geospatial skills to understand cities and issues in environmental inequality and access to resources. Through MUSA, I hope to strengthen my skills in data science, programming, and quantitative analysis and ultimately work at the intersection of GIS, data analysis, and urban or environmental planning."
-  },
-  {
-    "objectID": "about.html#skills",
-    "href": "about.html#skills",
-    "title": "About Me",
-    "section": "Skills",
-    "text": "Skills\n\n\nLanguages & Tools: R, Quarto, Git\nSpatial: QGIS, ARCGIS, Google Earth Engine\nData: US Census / ACS via tidycensus"
-  },
-  {
-    "objectID": "about.html#contact",
-    "href": "about.html#contact",
-    "title": "About Me",
-    "section": "Contact",
-    "text": "Contact\n\n\nEmail: sophia.jean.meyers@gmail.com\nGitHub: @SophiaMeyers"
+    "text": "Building Features, Watching What Happens\n\n\n\n\n\n\n\n\n\n\n\n\n\nVerify the Claim: White Philidelphians Living in Higher Rates of Poverty?\n\n\n\n\n\n\n\n\nOct 11, 2026\n\n\n\n\n\n\n\nWho Do We Know the Least About?\n\n\n\n\n\n\n\n\nOct 11, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "weekly-notes/index.html",
@@ -280,59 +371,66 @@
     "text": "Week 5: Linear Regression I · making predictions\n\n\n\n\n\n\n\n\nSep 25, 2026\n\n\n\n\n\n\n\nWeek 4: Spatial data · sf · spatial operations · neighborhood indicators\n\n\n\n\n\n\n\n\nSep 18, 2026\n\n\n\n\n\n\n\nWeek 3: Visualization · exploratory data analysis · joins\n\n\nPlotting reliability of acs data\n\n\n\n\n\nSep 11, 2026\n\n\n\n\n\n\n\nWeek 2: Algorithms in government · R & dplyr foundations · Census and ACS\n\n\nTable functions and acs data\n\n\n\n\n\nSep 4, 2026\n\n\n\n\n\n\n\nWeek 1: Getting Set Up\n\n\nFirst impressions, and getting the workflow running.\n\n\n\n\n\nAug 28, 2026\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "weekly-notes/week-05.html",
-    "href": "weekly-notes/week-05.html",
-    "title": "Week 5: Linear Regression I · making predictions",
+    "objectID": "weekly-notes/week-02.html",
+    "href": "weekly-notes/week-02.html",
+    "title": "Week 2: Algorithms in government · R & dplyr foundations · Census and ACS",
     "section": "",
-    "text": "We learned about the differences between traditional regression models creating machine learning regression models/ how they are cross validated."
+    "text": "First we had a quiz.Then we learned about the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus."
   },
   {
-    "objectID": "weekly-notes/week-05.html#what-we-did",
-    "href": "weekly-notes/week-05.html#what-we-did",
-    "title": "Week 5: Linear Regression I · making predictions",
+    "objectID": "weekly-notes/week-02.html#what-we-did",
+    "href": "weekly-notes/week-02.html#what-we-did",
+    "title": "Week 2: Algorithms in government · R & dplyr foundations · Census and ACS",
     "section": "",
-    "text": "We learned about the differences between traditional regression models creating machine learning regression models/ how they are cross validated."
+    "text": "First we had a quiz.Then we learned about the difference between running code in the console, which disappears, and creating an .R script. We then learned some common R functions we will use, such as, filter(), arrange(), select(). Finally we learned about the census and how it is much easily accessed and adjusted for your specific needs through the tidycensus."
   },
   {
-    "objectID": "weekly-notes/week-05.html#reflection",
-    "href": "weekly-notes/week-05.html#reflection",
-    "title": "Week 5: Linear Regression I · making predictions",
+    "objectID": "weekly-notes/week-02.html#reflection",
+    "href": "weekly-notes/week-02.html#reflection",
+    "title": "Week 2: Algorithms in government · R & dplyr foundations · Census and ACS",
     "section": "Reflection",
-    "text": "Reflection\n\nI want to see how spatial features can be used as data in a machine learning model to strengthen the predictions. For example, distance from a feature within a boundary."
+    "text": "Reflection\n\nI am excited about the much easier way to access census data through the tidycensus. I have tried to access data sets through the website for GIS projects and it was very difficult. It also seems as though the function that are used to filter through the data will become second nature and are not complicated. I think what will take the nost time is figuring out the piping and streamlining the data processing."
   },
   {
-    "objectID": "weekly-notes/week-05.html#questions-i-still-have",
-    "href": "weekly-notes/week-05.html#questions-i-still-have",
-    "title": "Week 5: Linear Regression I · making predictions",
+    "objectID": "weekly-notes/week-02.html#questions-i-still-have",
+    "href": "weekly-notes/week-02.html#questions-i-still-have",
+    "title": "Week 2: Algorithms in government · R & dplyr foundations · Census and ACS",
     "section": "Questions I Still Have",
-    "text": "Questions I Still Have\nFor a traditional regression model, how can a point on a regression line have a different p-value than another point. Shouldn’t the y-intercept of the line have the same significance?"
+    "text": "Questions I Still Have\nCan you filter through the data sets by putting in coordinates of a vector feauture and searching for tracts that fall within that area? Like if you wanted to hand draw a neighborhoods boundaries and search within that vector feature."
   },
   {
-    "objectID": "weekly-notes/week-03.html",
-    "href": "weekly-notes/week-03.html",
-    "title": "Week 3: Visualization · exploratory data analysis · joins",
+    "objectID": "weekly-notes/week-04.html",
+    "href": "weekly-notes/week-04.html",
+    "title": "Week 4: Spatial data · sf · spatial operations · neighborhood indicators",
     "section": "",
-    "text": "We learned about calculating reliability of change from the margins of error in census data. We also learned how to create and style plots in R."
+    "text": "We learned how to apply spatial information to our acs data with a geometry column, and how adjusts and name its coordinate reference system."
   },
   {
-    "objectID": "weekly-notes/week-03.html#what-we-did",
-    "href": "weekly-notes/week-03.html#what-we-did",
-    "title": "Week 3: Visualization · exploratory data analysis · joins",
+    "objectID": "weekly-notes/week-04.html#what-we-did",
+    "href": "weekly-notes/week-04.html#what-we-did",
+    "title": "Week 4: Spatial data · sf · spatial operations · neighborhood indicators",
     "section": "",
-    "text": "We learned about calculating reliability of change from the margins of error in census data. We also learned how to create and style plots in R."
+    "text": "We learned how to apply spatial information to our acs data with a geometry column, and how adjusts and name its coordinate reference system."
   },
   {
-    "objectID": "weekly-notes/week-03.html#reflection",
-    "href": "weekly-notes/week-03.html#reflection",
-    "title": "Week 3: Visualization · exploratory data analysis · joins",
+    "objectID": "weekly-notes/week-04.html#reflection",
+    "href": "weekly-notes/week-04.html#reflection",
+    "title": "Week 4: Spatial data · sf · spatial operations · neighborhood indicators",
     "section": "Reflection",
-    "text": "Reflection\n\nI didn’t realize that the Census had a constant confidence interval of 90%; that seems to make piping your code to test for reliability much simpler. I am excited about applying statistical functions we are learning/ have experience with to census data, as it is supporting my understanding."
+    "text": "Reflection"
   },
   {
-    "objectID": "weekly-notes/week-03.html#questions-i-still-have",
-    "href": "weekly-notes/week-03.html#questions-i-still-have",
-    "title": "Week 3: Visualization · exploratory data analysis · joins",
+    "objectID": "weekly-notes/week-04.html#questions-i-still-have",
+    "href": "weekly-notes/week-04.html#questions-i-still-have",
+    "title": "Week 4: Spatial data · sf · spatial operations · neighborhood indicators",
     "section": "Questions I Still Have",
-    "text": "Questions I Still Have\nWhat is it about the method in which they collect the data that makes the confidence interval a constant/ how is this calculated?"
+    "text": "Questions I Still Have\nWhat are examples of times in which you would find government spatial data set without a named and accurate coordinate reference system?"
+  },
+  {
+    "objectID": "assignments/assignment4.html#part-7-reflection",
+    "href": "assignments/assignment4.html#part-7-reflection",
+    "title": "Building Features, Watching What Happens",
+    "section": "Part 7: Reflection",
+    "text": "Part 7: Reflection\nDistance to the nearest stop lowered CV RMSE the most of the individual spatial features, from 12.44 for the baseline to 10.98, probably because it measures how close residents are to transit, which plausibly shapes whether a household needs a car. The raw stop count disappointed me most (12.35), since a count mostly tracks tract size rather than access, and the squared distance term added little (10.90), suggesting the relationship is close to linear. The City Hall distance categories (10.32) and logged income (10.76) each helped moderately, and combining them produced the final model’s 10.03. For distance, β̂ = −0.98: holding income, age, renter share, and City Hall ring constant, tracts one mile farther from the nearest stop have a 0.98 percentage-point lower share of households without a vehicle. For ŷ, a tract with otherwise typical characteristics and a stop 0.1 miles away is predicted to have 30.7% of households with no vehicle, versus 30.3% at 0.5 miles, a small gap because most tracts are close to a stop. On the final residual map, red clusters remain in North Philadelphia, parts of West Philadelphia, and Center City/South Philadelphia, where actual vehicle-free rates exceed predictions, so I would next measure transit service frequency and off-street parking availability in dense row house neighborhoods. Finally, very little of the remaining error looks like survey noise: the largest misses, 20 to 30 points, occur at low outcome CVs of about 0.1% to 0.3%, where ACS estimates are most precise, and the smoothed line does not rise as CV increases, so the leftover error mostly reflects what the model leaves out rather than uncertainty in the ACS estimate."
   }
 ]

@@ -2,7 +2,9 @@ project:
   type: website
   output-dir: docs
   execute-dir: project
-
+  render:
+    - "*.qmd"
+    - "!Practice/week5_lab_challenge.qmd"
 
 
 website:

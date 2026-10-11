@@ -1,5 +1,5 @@
 ---
-title: "Assignment: Building Features, Watching What Happens"
+title: "Building Features, Watching What Happens"
 subtitle: "MUSA 5080 · Integrates Weeks 1–5 · Due Friday, October 16"
 author: "Sophia Meyers"
 format:
@@ -11,37 +11,6 @@ execute:
   warning: false
   message: false
 freeze: false
----
-
-## What this assignment is (and isn't)
-
-This is **not a competition.** There's no leaderboard and no target RMSE. The goal is to practice the full prediction workflow on a question you choose, and to **find out what actually helps.** Some features you're sure will help won't, and some you add on a whim will. Both are findings.
-
-You'll:
-
-1. Choose a tract-level outcome for Philadelphia and check whether it's reliable enough to model (Weeks 2–3).
-2. Fit a baseline model and cross-validate it (Week 5).
-3. Pull data from Philadelphia's open data portal through its API and build spatial features: counts, densities, and distances (Week 4, plus one new tool).
-4. Transform variables with logs, squared terms, and categories. **Watch the October 9 recorded lecture before Part 5.**
-5. Keep a **model log** the whole way through, and compare where your first and final models go wrong.
-
-**Timing.** Parts 1–4 use only what we've covered through Week 5. You can finish them before the October 9 lecture. Part 5 is new material; the lecture explains it, and the instructions below give you the essentials.
-
-**Type the code yourself.** The worked examples show the pattern. Your job is to apply it to your outcome and your data choices.
-
-### Three rules that apply everywhere
-
-::: {.callout-important}
-## 1. Don't drop rows
-Every model is cross-validated on the same tracts with the same folds, so the rows in your model log are comparable. If a new variable has missing values, fill them (for example, 0 for a count, or the median with a note) or choose a different variable. The `cv_rmse()` helper below will stop and tell you if you break this rule.
-
-## 2. Stay inside the time window
-Your outcome comes from the 2019–2023 ACS. Pull open data from **2023 or earlier** (2021–2023 is ideal). Using 2025 data to predict a 2023 outcome uses information from the future, which a real prediction model would never have.
-
-## 3. No leakage
-Don't use any variable that's built from your outcome or measures the same thing another way. Ask yourself: *would an agency trying to predict this outcome for a tract have this variable?* If the answer is "only because it's basically the outcome," leave it out.
-:::
-
 ---
 
 ## Part 0: Setup
@@ -57,8 +26,6 @@ Sys.getenv("CENSUS_API_KEY") != ""   # should print TRUE
 ```
 
 ### The cross-validation helper
-
-This function runs 10-fold cross-validation with the same seed every time, so every model in your log is tested on the same folds. **You don't need to change it.** Read it once so you know what it does.
 
 ```{r}
 #| label: cv-helper
@@ -80,8 +47,6 @@ cv_rmse <- function(formula, data) {
 
 ### The model log
 
-Every time you fit a new model, add a row. By the end, this table is the story of your assignment.
-
 ```{r}
 #| label: log-start
 model_log <- tibble(
@@ -96,21 +61,6 @@ model_log <- tibble(
 
 ## Part 1: Choose your outcome
 
-Pick a **tract-level ACS variable for Philadelphia** that matters for policy. Two outcomes are off limits: median gross rent (we did it in lab) and median home value (save it for A4).
-
-MINE: Percentage of households with no vehicle
-
-Some ideas if you're stuck:
-
-| Outcome | Why an agency might care | ACS table |
-|---|---|---|
-| % of households with no vehicle | Transit planning | B08201 or B25044 |
-| Mean travel time to work | Access to jobs | B08013_001 ÷ B08303_001 |
-| % of people below poverty | Targeting services | B17001 |
-| % of housing units vacant | Housing and blight | B25002 |
-| % of households overcrowded | Housing conditions | B25014 |
-
-Use `load_variables(2023, "acs5")` to browse and find exact variable codes.
 
 ### 1A: Pull your outcome and your baseline predictors
 
@@ -191,11 +141,12 @@ sum(is.na(philly_tracts$y))
 summary(philly_tracts$y_cv)
 ```
 
+
 If more than about a third of tracts have low reliability, consider a different outcome, or one built from larger counts. Write your reasoning either way.
 
-**Answer (2–3 sentences):** What is your outcome, why would an agency want to predict it, and how reliable is it?
+**Answer:** What is your outcome, why would an agency want to predict it, and how reliable is it?
 
-*Your answer:*
+The outcome shows the percentage of households in each Philadelphia census tract that have no vehicle. An agency could use this measure to find areas where households may have greater transportation needs and may benefit from transportation services. The outcome is highly reliable because 387 of 388 tracts have high reliability, while only 1 tract has low reliability, which is far below one-third of the tracts.
 
 ### 1C: Decide which tracts to model
 
@@ -204,7 +155,7 @@ Filter once, here, and never again. Every later step uses `tracts`.
 ```{r}
 #| label: filter
 tracts <- philly_tracts %>%
-  filter(total_popE > 0,
+  filter(total_householdsE > 0,
          !is.na(y)
          # add !is.na() for each baseline predictor like in the in-class lab
          )
@@ -215,8 +166,7 @@ nrow(tracts)
 
 **Answer:** How many tracts did you lose, and what kinds of places are they?
 
-*Your answer:*
-
+I lost 20 tracts. These are tracts with zero reported households, so the percentage of households without a vehicle cannot be calculated for them because there is no household denominator.
 ---
 
 ## Part 2: Baseline model
@@ -226,17 +176,45 @@ nrow(tracts)
 Plot your outcome against each predictor before modeling (the Week 3 habit).
 
 ```{r}
-#| label: look
-# one scatterplot per predictor, e.g.:
-# ggplot(tracts, aes(x = ___, y = y)) + geom_point(alpha = 0.5) +
-#   geom_smooth(method = "lm", se = FALSE) + theme_minimal()
+income_median <- median(tracts$median_incomeE, na.rm = TRUE)
+
+tracts <- tracts %>% # removing 7 empty variables
+  mutate(
+    median_incomeE = if_else(
+      is.na(median_incomeE),
+      income_median,
+      median_incomeE
+    )
+  )
 ```
+
+```{r}
+#| label: look-income
+# one scatterplot per predictor, e.g.:
+ ggplot(tracts, aes(x = median_incomeE, y = y)) + geom_point(alpha = 0.5) +
+   geom_smooth(method = "lm", se = FALSE) + theme_minimal()
+```
+
+```{r}
+#| label: look-age
+# one scatterplot per predictor, e.g.:
+ ggplot(tracts, aes(x = median_ageE, y = y)) + geom_point(alpha = 0.5) +
+   geom_smooth(method = "lm", se = FALSE) + theme_minimal()
+```
+```{r}
+#| label: look-renter
+# one scatterplot per predictor, e.g.:
+ ggplot(tracts, aes(x = renter_pct, y = y)) + geom_point(alpha = 0.5) +
+   geom_smooth(method = "lm", se = FALSE) + theme_minimal()
+```
+
 
 ### 2B: Fit and log
 
+
 ```{r}
 #| label: m1
-f1 <- y ~ ___ + ___ + ___
+f1 <- y ~ median_incomeE + median_ageE + renter_pct
 
 m1 <- lm(f1, data = tracts)
 summary(m1)
@@ -244,16 +222,13 @@ summary(m1)
 model_log <- model_log %>%
   add_row(model = "m1", added = "ACS baseline",
           cv_rmse = cv_rmse(f1, tracts),
-          notes = "___")
+          notes = "Baseline model with income, age, and renter percentage")
 
 model_log
 ```
-
-Write the CV RMSE as a sentence, in your outcome's units: "On tracts it hasn't seen, the baseline model misses by about ___."
+On tracts it hasn't seen, the baseline model misses by about 12.44 percentage points, based on the cross-validation RMSE.
 
 ### 2C: Where is the baseline wrong?
-
-Save this map. You'll compare it to your final model's map in Part 6.
 
 ```{r}
 #| label: resid-map-1
@@ -268,29 +243,15 @@ ggplot(tracts) +
        fill = "Residual")
 ```
 
-**Answer:** Where do the residuals cluster? What might those places have in common that your model doesn't know about? **Use this answer to choose your open data layers in Part 3.**
+**Answer:** Where do the residuals cluster? What might those places have in common that your model doesn't know about?
 
-*Your answer:*
+The residual map shows spatial clustering, with positive residuals concentrated in parts of central and southern Philadelphia and negative residuals appearing in portions of northwestern and northeastern Philadelphia. Positive residuals indicate that the actual percentage of households without vehicles is higher than the model predicts, while negative residuals indicate that it is lower than predicted. Because the residuals are spatially patterned, median income, median age, and renter percentage do not fully explain geographic variation in vehicle ownership. The remaining patterns may reflect differences in public transportation access, neighborhood density, walk-ability, and proximity. These patterns suggest that adding transportation-accessibility or built-environment data could improve the model.
 
 ---
 
 ## Part 3: Getting data from Philadelphia's open data portal
 
-Many of the city's datasets on [OpenDataPhilly](https://opendataphilly.org) are served through a **Carto SQL API**. You send a SQL query in a URL, and it sends back data. Ask for `format=GeoJSON` and `st_read()` reads the result directly, just like the Indego feed in Week 4.
 
-The pattern:
-
-```
-https://phl.carto.com/api/v2/sql?format=GeoJSON&q=SELECT ... FROM table_name WHERE ...
-```
-
-Three pieces of SQL are all you need:
-
-- `SELECT the_geom, column1, column2` chooses which columns come back. **Always include `the_geom`**, or you get no geometry.
-- `FROM table_name` chooses the dataset.
-- `WHERE ...` filters rows. **Filter in the query, not in R.** Some tables have millions of rows, and pulling everything will be slow or fail.
-
-This helper builds the URL for you. Spaces and symbols in a URL need encoding, and `URLencode()` handles that.
 
 ```{r}
 #| label: carto-helper
@@ -301,8 +262,6 @@ carto_get <- function(sql) {
 ```
 
 ### Finding a table name
-
-On a dataset's OpenDataPhilly page, look for the API link. The table name is the word after `FROM` in the example query. To see what values a column takes before you filter on it, ask for a count in CSV format:
 
 ```{r}
 #| label: explore-values
@@ -330,46 +289,36 @@ burglary <- carto_get(
 nrow(burglary)
 ```
 
-::: {.callout-warning}
-## Check for missing geometry
-Some records have no location. Drop them with `filter(!st_is_empty(burglary))`, and count how many you lost. Every point you drop is a point that won't be counted.
-:::
 
 ### Other layers to try
 
-These tables were available on Carto as of this fall. If a query fails, check the dataset's OpenDataPhilly page for the current table name.
-
-| Data | Table | Filter on | Notes |
-|---|---|---|---|
-| Crime incidents | `incidents_part1_part2` | `dispatch_date`, `text_general_code` | Pick specific offense types |
-| Shooting victims | `shootings` | `date_` | Small enough to pull several years |
-| 311 requests | `public_cases_fc` | `requested_datetime`, `service_name` | Use the count query above to see service names |
-| Indego stations | *(not Carto)* `https://www.rideindego.com/stations/json/` | — | The Week 4 feed |
-
-Datasets not on Carto often have a GeoJSON download link on their OpenDataPhilly page. `st_read()` reads those URLs too.
-For example, navigage to https://opendataphilly.org/, find a dataset that you'd like to import. I found city landmarks. On the page there is a link to a GeoJSON file. I simply right-clicked on that hyperlink and copied it and then used st_read() and pasted the link: 
-
-landmarks <- st_read("https://hub.arcgis.com/api/v3/datasets/6b2fe4a0fbe14e0a8e6afceaea230b8e_0/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1")
-
 ### Your turn
-
-Pull **at least two layers** that you think relate to your outcome. Base your choice on your Part 2C answer.
 
 ```{r}
 #| label: my-layers
-layer1 <- carto_get(
-  "SELECT the_geom, ___
-   FROM ___
-   WHERE ___"
+# Layer 1: SEPTA bus stops, Fall 2023
+bus_stops <- st_read(
+  "https://hub.arcgis.com/api/v3/datasets/4ad3e7e4f9c34f619b467bc2d979f08b_0/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1",
+  quiet = TRUE
 ) %>%
   st_transform(st_crs(tracts))
 
-layer2 <- ___
+# Layer 2: SEPTA trolley stops, Fall 2023
+trolley_stops <- st_read(
+  "https://hub.arcgis.com/api/v3/datasets/627fb25b9af14d2ab45fd3c8d65564b1_0/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1",
+  quiet = TRUE
+) %>%
+  st_transform(st_crs(tracts))
+
+nrow(bus_stops); nrow(trolley_stops)
+```
+```{r}
+bus_stops <- bus_stops %>% filter(!st_is_empty(geometry))
 ```
 
 **Answer:** Why these layers? What do you expect them to capture that the ACS variables don't?
 
-*Your answer:*
+I chose bus stops and trolley stops because access to public transportation may help explain why some Philadelphia census tracts have higher or lower percentages of households without vehicles than my baseline model predicts. My baseline model includes median income, median age, and renter percentage, but these variables do not directly measure transportation availability. Bus and trolley stop locations provide additional information about transit access that the ACS variables do not capture.
 
 ---
 
@@ -399,7 +348,7 @@ Raw counts mostly measure **tract size**. A big tract has more of everything. No
 #| label: density
 tracts <- tracts %>%
   mutate(
-    area_sqmi         = as.numeric(st_area(.)) / 27878400,   # sq ft in a sq mile
+    area_sqmi         = as.numeric(st_area(.)) / 27878400,  
     burglary_per_sqmi = n_burglary / area_sqmi,
     burglary_per_1k   = n_burglary / total_popE * 1000
   )
@@ -427,11 +376,6 @@ tracts <- tracts %>%
   mutate(dist_station_mi = as.numeric(
     st_distance(tract_pts, stations[nearest_idx, ], by_element = TRUE)) / 5280)
 ```
-
-### 4D: Measuring distance to one place
-
-Sometimes the "thing" is a single location, such as City Hall as a stand-in for the center of the regional economy.
-
 ```{r}
 #| label: city-hall
 city_hall <- st_sfc(st_point(c(-75.1636, 39.9526)), crs = 4326) %>%
@@ -441,42 +385,70 @@ tracts <- tracts %>%
   mutate(dist_ch_mi = as.numeric(st_distance(tract_pts, city_hall)) / 5280)
 ```
 
-### 4E: Your turn
+### 4D: Measuring distance to one place
 
-Build **at least three spatial features** from your own layers, and use at least two types (count, density, nearest distance, distance to a place). After **each one**, fit a model, cross-validate it, and log it.
+Sometimes the "thing" is a single location, such as City Hall as a stand-in for the center of the regional economy.
 
 ```{r}
 #| label: my-spatial
+# Feature 1: bus-stop count
 tracts <- tracts %>%
-  mutate(___ = ___)
+  mutate(n_bus_stops = lengths(st_intersects(., bus_stops)))
 
-f2 <- y ~ ___
+f2 <- y ~ median_incomeE + median_ageE + renter_pct + n_bus_stops
 
 model_log <- model_log %>%
-  add_row(model = "m2", added = "___",
+  add_row(model = "m2", added = "Bus stop count",
           cv_rmse = cv_rmse(f2, tracts),
-          notes = "___")
+          notes = "Tests whether the number of bus stops helps explain vehicle ownership")
 
-# repeat for each feature
+# Feature 2: bus-stop density per square mile
+tracts <- tracts %>%
+  mutate(
+    area_sqmi = as.numeric(st_area(.)) / 27878400,
+    bus_stops_per_sqmi = n_bus_stops / area_sqmi
+  )
+
+f3 <- y ~ median_incomeE + median_ageE + renter_pct + bus_stops_per_sqmi
+
+m3 <- lm(f3, data = tracts)
+
+model_log <- model_log %>%
+  add_row(model = "m3", added = "Bus-stop density",
+          cv_rmse = cv_rmse(f3, tracts),
+          notes = "Adjusts for tract area to measure transit-stop density")
+
+# Feature 3: distance to the nearest bus stop
+tract_pts <- st_point_on_surface(tracts)
+
+nearest_bus_idx <- st_nearest_feature(tract_pts, bus_stops)
+
+tracts <- tracts %>%
+  mutate(
+    dist_bus_stop_mi = as.numeric(
+      st_distance(tract_pts, bus_stops[nearest_bus_idx, ], by_element = TRUE)
+    ) / 5280
+  )
+
+f4 <- y ~ median_incomeE + median_ageE + renter_pct + dist_bus_stop_mi
+
+m4 <- lm(f4, data = tracts)
+
+model_log <- model_log %>%
+  add_row(model = "m4", added = "Distance to nearest bus stop",
+          cv_rmse = cv_rmse(f4, tracts),
+          notes = "Tests whether proximity to transit explains vehicle ownership")
+
 model_log
 ```
 
 **Answer:** Which spatial feature helped most? Did any feature you expected to help do nothing, or make CV RMSE worse? Why might that be?
 
-*Your answer:*
+Distance to the nearest bus stop helped the most, reducing the cross-validation RMSE from 12.44 in the baseline model to 10.98. This is an improvement of approximately 11.8%. Bus-stop density also improved the model, reducing RMSE to 12.13, while the raw bus-stop count made only a small improvement, with an RMSE of 12.35. These results suggest that proximity to public transportation may be more informative for predicting vehicle ownership than simply counting stops or measuring their density. The count may be less useful because it does not account for tract size, while density adjusts for area but does not directly measure how close residents are to transit. However, proximity to a bus stop does not necessarily capture the level of service.
 
 ---
 
 ## Part 5: Transforming features
-
-**Watch the October 9 recorded lecture before you start this part.** Below is a summary to work from.
-
-So far, every predictor has entered the model as a straight line: each additional unit of X changes predicted Y by the same amount, everywhere. Transformations let the model bend. For prediction, the question is simply **does the bend lower CV RMSE?** For interpretation, each transformation changes what a coefficient means, so you need to know how to read it.
-
-::: {.callout-tip}
-## Transform predictors, not your outcome
-Keep your outcome `y` untransformed in this assignment. If you model `log(y)`, your CV RMSE comes out in log units and can't be compared to the other rows in your log. (Predicting a logged outcome well requires back-transforming, which is an A4 topic.)
-:::
 
 ### 5A: Logs, for skewed predictors
 
@@ -487,13 +459,6 @@ Many urban variables are skewed: a few tracts have huge values, and most have sm
 ggplot(tracts, aes(x = burglary_per_sqmi)) + geom_histogram(bins = 30) + theme_minimal()
 ggplot(tracts, aes(x = log1p(burglary_per_sqmi))) + geom_histogram(bins = 30) + theme_minimal()
 ```
-
-::: {.callout-warning}
-## log(0) doesn't exist
-`log(0)` is `-Inf`, and it will break your model. Counts and densities often include zeros. Use `log1p(x)`, which computes `log(x + 1)`, for anything that can be 0.
-:::
-
-**Reading the coefficient:** when a predictor is logged, a **1% increase** in X goes with a change of about **β/100** in Y, in Y's units. With `log1p`, this reading is approximate for small values of X.
 
 ### 5B: Squared terms, for curves
 
@@ -539,10 +504,6 @@ summary(m_cat)
 
 **Reading the coefficients:** R turns a factor with k categories into k − 1 dummy variables. The category left out is the **reference level** (here, "Core," the first level). Each coefficient is the **difference from the reference**: `ringOuter` is how much higher or lower predicted Y is in outer tracts *compared to core tracts*, holding everything else in the model constant. To change the reference, use `relevel(ring, ref = "Outer")`.
 
-::: {.callout-note}
-## Check your group sizes
-If a category has only a handful of tracts, its coefficient is unstable, and in cross-validation some folds may not contain it at all. Aim for at least 20 tracts per category.
-:::
 
 ### 5D: Your turn
 
@@ -550,23 +511,63 @@ Try **at least one of each**: a log, a squared term, and a categorical variable.
 
 ```{r}
 #| label: my-transforms
-f_log <- y ~ ___
+
+# Log 
+f_log <- y ~ log1p(median_incomeE) + median_ageE +
+  renter_pct + dist_bus_stop_mi
 
 model_log <- model_log %>%
-  add_row(model = "m_", added = "log of ___",
-          cv_rmse = cv_rmse(f_log, tracts),
-          notes = "___")
+  add_row(
+    model = "m5",
+    added = "Log of median income",
+    cv_rmse = cv_rmse(f_log, tracts),
+    notes = "Tests whether a log transformation of income improves prediction"
+  )
 
-# squared term
 
-# categorical
+# Squared term 
+f_sq <- y ~ median_incomeE + median_ageE + renter_pct +
+  dist_bus_stop_mi + I(dist_bus_stop_mi^2)
+
+model_log <- model_log %>%
+  add_row(
+    model = "m6",
+    added = "Squared bus-stop distance",
+    cv_rmse = cv_rmse(f_sq, tracts),
+    notes = "Tests for a curved relationship between transit distance and vehicle ownership"
+  )
+
+
+# Categorical
+tracts <- tracts %>%
+  mutate(
+    ring = case_when(
+      dist_ch_mi < 2 ~ "Core",
+      dist_ch_mi < 5 ~ "Inner",
+      TRUE ~ "Outer"
+    ),
+    ring = factor(ring, levels = c("Core", "Inner", "Outer"))
+  )
+
+tracts %>% st_drop_geometry() %>% count(ring)
+
+f_cat <- y ~ median_incomeE + median_ageE + renter_pct +
+  ring + dist_bus_stop_mi
+
+model_log <- model_log %>%
+  add_row(
+    model = "m7",
+    added = "Categorical City Hall distance",
+    cv_rmse = cv_rmse(f_cat, tracts),
+    notes = "Tests whether core, inner, and outer areas differ in vehicle ownership"
+  )
 
 model_log
 ```
 
 **Answer:** Which transformation helped most? For your categorical variable, write one sentence reading one of its coefficients correctly, naming the reference level.
 
-*Your answer:*
+The categorical City Hall distance model performed best, with a cross-validation RMSE of 10.32, compared with 12.44 for the baseline model. This represents a 17.1% reduction in prediction error. The log-transformed median income model also improved predictive performance, with an RMSE of 10.76. The squared bus-stop distance model had an RMSE of 10.90, which was slightly worse than the log-income model but still better than the baseline. These results show that accounting for spatial differences between central, inner, and outer parts of Philadelphia helps explain variation in the percentage of households without vehicles.
 
 ---
 
@@ -576,15 +577,21 @@ Combine the features and transformations that earned their place, **judged by CV
 
 ```{r}
 #| label: final
-f_final <- y ~ ___
+f_final <- y ~ log1p(median_incomeE) +
+  median_ageE + renter_pct +
+  ring + dist_bus_stop_mi
 
 m_final <- lm(f_final, data = tracts)
 summary(m_final)
 
 model_log <- model_log %>%
-  add_row(model = "final", added = "___",
+  add_row(model = "final", added = "Log income + City Hall distance categories + bus-stop distance",
           cv_rmse = cv_rmse(f_final, tracts),
-          notes = "___")
+          notes = "Combines the best-performing transformations and spatial predictors")
+#getting rid of the duplicated again?
+model_log <- model_log %>%
+  distinct(model, .keep_all = TRUE)
+
 
 model_log
 ```
@@ -605,6 +612,25 @@ ggplot(tracts) +
 ```
 
 Put your two residual maps side by side, or put them next to each other in the rendered document. Did the clusters from Part 2C shrink? Where did they stay?
+```{r}
+library(patchwork)
+
+lims <- range(c(tracts$resid_m1, tracts$resid_final))
+
+map_fun <- function(var, ttl) {
+  ggplot(tracts) +
+    geom_sf(aes(fill = {{ var }}), color = NA) +
+    scale_fill_gradient2(low = "#2166ac", mid = "grey95", high = "#b2182b",
+                         midpoint = 0, limits = lims) +
+    theme_void() +
+    labs(title = ttl, fill = "Residual")
+}
+
+(map_fun(resid_m1, "Baseline model") | map_fun(resid_final, "Final model")) +
+  plot_layout(guides = "collect") +
+  plot_annotation(subtitle = "Red = actual higher than predicted")
+```
+
 
 ### Are the biggest misses in the least reliable tracts?
 
@@ -617,22 +643,14 @@ ggplot(tracts, aes(x = y_cv, y = abs(resid_final))) +
   theme_minimal()
 ```
 
----
-
-## Part 7: Reflection (about 300 words)
-
-Answer in prose, drawing on your model log (incorporate our words of the day for bonus points. just kidding):
-
-1. **What helped, and what didn't?** Name the feature that lowered CV RMSE the most and the one that disappointed you most. Offer a reason for each.
-2. **Read one coefficient twice.** Choose a variable in your final model. Give its β̂ reading and its ŷ reading in one sentence each.
-3. **What's still missing?** Look at your final residual map. Name one thing about those places you'd want to measure next, and where you might get the data.
-4. **How much of the remaining error might be uncertainty or statistical noise?** Use your last plot.
-
-*Your answer:*
 
 ---
 
-## Submitting
+## Part 7: Reflection
 
-Render this document to HTML and submit the link on Canvas by Friday, October 16. I'll miss you all terribly while I'm away. Please send letters or correspondences to my office mailbox. 
+
+Distance to the nearest stop lowered CV RMSE the most of the individual spatial features, from 12.44 for the baseline to 10.98, probably because it measures how close residents are to transit, which plausibly shapes whether a household needs a car. The raw stop count disappointed me most (12.35), since a count mostly tracks tract size rather than access, and the squared distance term added little (10.90), suggesting the relationship is close to linear. The City Hall distance categories (10.32) and logged income (10.76) each helped moderately, and combining them produced the final model’s 10.03. For distance, β̂ = −0.98: holding income, age, renter share, and City Hall ring constant, tracts one mile farther from the nearest stop have a 0.98 percentage-point lower share of households without a vehicle. For ŷ, a tract with otherwise typical characteristics and a stop 0.1 miles away is predicted to have 30.7% of households with no vehicle, versus 30.3% at 0.5 miles, a small gap because most tracts are close to a stop. On the final residual map, red clusters remain in North Philadelphia, parts of West Philadelphia, and Center City/South Philadelphia, where actual vehicle-free rates exceed predictions, so I would next measure transit service frequency and off-street parking availability in dense row house neighborhoods. Finally, very little of the remaining error looks like survey noise: the largest misses, 20 to 30 points, occur at low outcome CVs of about 0.1% to 0.3%, where ACS estimates are most precise, and the smoothed line does not rise as CV increases, so the leftover error mostly reflects what the model leaves out rather than uncertainty in the ACS estimate.
+
+---
+
 
