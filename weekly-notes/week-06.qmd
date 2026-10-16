@@ -1,0 +1,14 @@
+---
+title: "Week 6: Recap & worked example · spatial autocorrelation · Moran’s I"
+description: ""
+date: 2026-10-16
+---
+
+## What We Did
+Went over Moran's I and reminded ourselves about the k-fold model testing process. 
+
+## Reflection
+
+
+## Questions I Still Have
+How can you make a model that predict a varibale by adding a bunch of predictor varibale without some sort of base information to inform it what the unit or relation numerically that there would be. eg. how does it know the base price of a house. Is it the training that makes you manually make it test around the right range. And if so how does it get so close so quickly without any related information tot he variable. 
