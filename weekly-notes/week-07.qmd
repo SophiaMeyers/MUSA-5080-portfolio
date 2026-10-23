@@ -5,8 +5,11 @@ date: 2026-10-23
 ---
 
 ## What We Did
+Went over moran's I and K Nearest Neighbor. We discussed the social impacts of creating variable predicting models, such as rent inflations, etc. You have to consider hwo is benefiting from the leveraging of data.
 
 ## Reflection
 
 
 ## Questions I Still Have
+
+Is the K you pick for your nearest neighbor analysis a diminishing return. For morans I, how does one know how askew from 1 is too much, and shows spatial autocorrelation.
