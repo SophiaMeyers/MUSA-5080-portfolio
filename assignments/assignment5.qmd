@@ -1,5 +1,5 @@
 ---
-title: "Assignment 5: House Price Prediction, Chicago"
+title: "House Price Prediction, Chicago"
 subtitle: "MUSA 5080 · Team assignment"
 author: "Team fun! we love ppa!: Sophia Meyers, Gautami Kasat, Sara Cerami, Tegan Lochner"
 date: last-modified
@@ -186,8 +186,8 @@ identical features. Split off `train` again whenever you add something.
 ```{r}
 #| label: load
 all_sales <- bind_rows(
-  read_csv("chicago_train.csv", show_col_types = FALSE) %>% mutate(split = "train"),
-  read_csv("chicago_test.csv",  show_col_types = FALSE) %>% mutate(split = "test")
+  read_csv("data/chicago_train.csv", show_col_types = FALSE) %>% mutate(split = "train"),
+  read_csv("data/chicago_test.csv",  show_col_types = FALSE) %>% mutate(split = "test")
 ) %>%
   st_as_sf(coords = c("lon", "lat"), crs = 4326) %>%
   st_transform(3435)            # Illinois East State Plane, feet
@@ -509,7 +509,7 @@ train <- all_sales |>
 ##PARKS DATA
 # Read the parks CSV
 parks_raw <- readr::read_csv(
-  "data/CPD_Parks_20261019.csv",
+  "data/data/CPD_Parks_20261019.csv",
   show_col_types = FALSE,
   col_types = readr::cols(
     the_geom = readr::col_character(),
@@ -596,7 +596,7 @@ train <- all_sales |>
 ```{r}
 # Read the CTA rail station shapefile
 cta_stations <- sf::st_read(
-  "data/CTA_RailStations/CTA_RailStations.shp",
+  "data/data/CTA_RailStations/CTA_RailStations.shp",
   quiet = TRUE
 )
 
@@ -645,7 +645,7 @@ train <- all_sales |>
 ```{r}
 # Read the metra rail station shapefile
 metra_stations <- sf::st_read(
-  "data/Metra_Stations/MetraStations.shp",
+  "data/data/Metra_Stations/MetraStations.shp",
   quiet = TRUE
 )
 
@@ -693,12 +693,12 @@ train <- all_sales |>
 
 ```{r}
 school_locations <- readr::read_csv(
-  "data/Chicago_Public_Schools_-_School_Locations_SY2324_20261019.csv",
+  "data/data/Chicago_Public_Schools_-_School_Locations_SY2324_20261019.csv",
   show_col_types = FALSE
 )
 
 school_reports <- readr::read_csv(
-  "data/Chicago_Public_Schools_-_School_Progress_Reports_SY2425_20261019.csv",
+  "data/data/Chicago_Public_Schools_-_School_Progress_Reports_SY2425_20261019.csv",
   show_col_types = FALSE
 )
 
@@ -827,7 +827,7 @@ train <- all_sales |>
 
 ```{r}
 landmarks <- sf::st_read(
-  "data/LandmarkDistricts_nov2012/LandmarkDistricts_nov2012.shp",
+  "data/data/LandmarkDistricts_nov2012/LandmarkDistricts_nov2012.shp",
   quiet = TRUE
 )
 
@@ -871,7 +871,7 @@ train <- all_sales |>
 
 ```{r}
 redlining <- sf::st_read(
-  "data/mappinginequality.gpkg",
+  "data/data/mappinginequality.gpkg",
   quiet = TRUE
 )
 
@@ -937,7 +937,7 @@ train <- all_sales |>
 
 ```{r}
 postsecondary <- st_read(
-  "data/EDGE_GEOCODE_POSTSECONDARYSCH_2324.geojson"
+  "data/data/EDGE_GEOCODE_POSTSECONDARYSCH_2324.geojson"
 )
 
 postsecondary <- postsecondary |>
@@ -1869,7 +1869,7 @@ ggplot(map_residuals) +
 
 ```{r}
 model_final <- lm(
-  formula(ff19),
+  formula(ff21),
   data = st_drop_geometry(train)
 )
 
@@ -1889,7 +1889,7 @@ ggplot(map_residuals_final) +
   ) +
   labs(
     title = "Spatial Distribution of House Price Final Model Residuals",
-    subtitle = "Model ff19",
+    subtitle = "Model ff21",
     color = "Residual ($)"
   ) +
   theme_minimal()
@@ -2037,7 +2037,7 @@ house. Set `f_final` to your final formula.
 
 ```{r}
 #| label: predict-test
-f_final <- ff19
+f_final <- ff21
 m_final <- lm(f_final, data = st_drop_geometry(train))
 
 test <- all_sales %>% filter(split == "test")
@@ -2052,7 +2052,7 @@ final_cv <- cv_rmse(f_final, train)
 final_cv
 ```
 
-**Final CV RMSE:** $301,685. When our test RMSE comes back, we'll explain the gap on Q7.
+**Final CV RMSE:** $299,452.8. When our test RMSE comes back, we'll explain the gap on Q7.
 
 ------------------------------------------------------------------------
 
