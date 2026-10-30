@@ -5,6 +5,7 @@ project:
   render:
     - "*.qmd"
     - "!Practice/week5_lab_challenge.qmd"
+    - "!Practice/week9_lab_chicago.qmd"
 
 
 website:

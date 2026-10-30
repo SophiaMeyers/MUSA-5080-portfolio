@@ -1,0 +1,15 @@
+---
+title: "Week 8: Count models · predictive policing"
+description: ""
+date: 2026-10-30
+---
+
+## What We Did
+
+Discussed the positive feedback loop created by predictive policing models.
+## Reflection
+
+There are spatial associations with where crime will be committed, not caused by bias, not because crime is not a behavior someone is predisposed to commit but rather a product of someone environment (eg. poverty). Thus, higher policing would not prevent future crime without interventions into the root cause of the crimes being committed.
+## Questions I Still Have
+
+Is there any way we can input data into a model to accoutn for causation of clustered actions?
