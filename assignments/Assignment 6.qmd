@@ -1,9 +1,9 @@
 ---
-title: "Assignment 6: Parole Reform"
+title: "Parole Reform"
 subtitle: "MUSA 5080 · Fall 2026"
 author: "Sophia Meyers"
-date: today
-format:
+date: last-modified
+format: 
   html:
     code-fold: show
     toc: true
